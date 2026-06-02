@@ -18,7 +18,28 @@
         <a href="../authors/index.html" class="sidebar-item"><span class="sidebar-icon">👥</span> Authors</a>
       </div>
     </div>
-    <div class="sidebar-footer"><div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--border-radius-md);background:var(--color-bg-hover)"><div class="avatar avatar-sm">JD</div><div><div style="font-size:13px;font-weight:600">John Doe</div></div></div></div>
+        <div class="sidebar-footer" style="display:flex;align-items:center;gap:12px">
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-switcher-btn" style="padding: 5px 10px; border-radius: var(--border-radius-md);">
+          <svg class="globe" viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5;"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <span class="lang-switcher-text" style="font-size: 12px;">Tiếng Việt</span>
+          <svg class="caret" viewBox="0 0 24 24" style="width: 8px; height: 8px; fill: none; stroke: currentColor; stroke-width: 2;"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-switcher-dropdown" style="right: 0; min-width: 120px;">
+          <div class="lang-item active" data-lang="vi" style="font-size: 12px; padding: 6px 10px;">Tiếng Việt</div>
+          <div class="lang-item" data-lang="en" style="font-size: 12px; padding: 6px 10px;">English</div>
+        </div>
+      </div>
+      
+      <!-- Theme Toggle -->
+      <button class="theme-toggle-btn" title="Toggle Theme" style="background:none;border:none;color:var(--color-text-muted);font-size:16px;cursor:pointer">🌙</button>
+
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:var(--border-radius-md);background:var(--color-bg-hover)">
+        <div class="avatar avatar-sm">JD</div>
+        <div><div style="font-size:13px;font-weight:600">John Doe</div></div>
+      </div>
+    </div>
   </aside>
   <div class="main-content">
     <header class="app-header">

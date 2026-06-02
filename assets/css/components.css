@@ -417,3 +417,244 @@ tbody tr:hover { background: var(--color-bg-hover); }
 .rank-2 { background: linear-gradient(135deg,#9ca3af,#6b7280); color: #fff; }
 .rank-3 { background: linear-gradient(135deg,#f97316,#ea580c); color: #fff; }
 .rank-other { background: var(--color-bg-hover); color: var(--color-text-muted); }
+
+/* ---- ARTICLE CARD (Premium Design) ---- */
+.article-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: all var(--transition-base);
+  position: relative;
+  text-align: left;
+}
+.article-card:hover {
+  border-color: var(--border-color-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.article-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.article-card-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.article-card-badge.survey {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+.article-card-badge.article {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+}
+.article-bookmark-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--color-text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.article-bookmark-btn:hover {
+  border-color: var(--border-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+.article-title-link {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.article-title-link:hover {
+  color: var(--color-accent);
+}
+.article-meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  align-items: center;
+}
+.article-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.article-meta-item.open-access {
+  color: var(--color-success);
+}
+.article-abstract-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-1);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.article-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-2);
+}
+.article-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.article-pill-tag {
+  background: var(--color-bg-hover);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  padding: 4px 10px;
+  border-radius: var(--border-radius-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+}
+.article-pill-tag:hover {
+  background: var(--border-color-hover);
+  color: var(--color-text-primary);
+}
+.article-stats-right {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* ---- LANGUAGE SWITCHER ---- */
+.lang-switcher {
+  position: relative;
+  display: inline-block;
+}
+.lang-switcher-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-full);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  outline: none;
+}
+.lang-switcher-btn:hover {
+  border-color: var(--border-color-hover);
+  background: var(--color-bg-hover);
+}
+.lang-switcher-btn svg.globe {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+.lang-switcher-btn svg.caret {
+  width: 10px;
+  height: 10px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform var(--transition-base);
+}
+.lang-switcher.open .lang-switcher-btn svg.caret {
+  transform: rotate(180deg);
+}
+.lang-switcher-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--color-bg-modal);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-1);
+  min-width: 140px;
+  box-shadow: var(--shadow-lg);
+  display: none;
+  z-index: 1000;
+  animation: fadeIn 0.15s ease;
+}
+.lang-switcher-dropdown.show {
+  display: block;
+}
+.lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.lang-item:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+.lang-item.active {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semi);
+}
+
+/* ---- THEME TOGGLE ---- */
+.theme-toggle-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-size: 14px;
+}
+.theme-toggle-btn:hover {
+  border-color: var(--border-color-hover);
+  background: var(--color-bg-hover);
+  transform: scale(1.05);
+}
+
+/* ---- RESPONSIVE UTILITIES ---- */
+@media (max-width: 576px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .lang-switcher-text {
+    display: none !important;
+  }
+  .lang-switcher-btn {
+    padding: 6px 10px !important;
+    gap: 4px !important;
+  }
+}

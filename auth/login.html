@@ -82,10 +82,37 @@
 <script src="../assets/js/main.js"></script>
 <script>
 function handleLogin(){
-  const email = document.querySelector('#login-email').value;
-  const pass = document.querySelector('#login-password').value;
-  if(!email || !pass){ document.querySelector('#login-error').style.display='flex'; return; }
-  window.location.href = '../dashboard/index.html';
+  const email = document.querySelector('#login-email').value.trim();
+  const pass = document.querySelector('#login-password').value.trim();
+  if(!email || !pass){ 
+    const err = document.querySelector('#login-error');
+    err.style.display='flex'; 
+    err.querySelector('span:not(.alert-icon)').textContent = 'Vui lòng điền đầy đủ email và mật khẩu.';
+    return; 
+  }
+  
+  // Simulated authentication check
+  localStorage.setItem('isLoggedIn', 'true');
+  if (email.toLowerCase().includes('admin')) {
+    localStorage.setItem('userRole', 'admin');
+    localStorage.setItem('userName', 'Admin User');
+  } else {
+    localStorage.setItem('userRole', 'user');
+    localStorage.setItem('userName', 'John Doe');
+  }
+  
+  // Handle redirect path if it exists
+  const redirectUrl = localStorage.getItem('redirectUrl');
+  if (redirectUrl) {
+    localStorage.removeItem('redirectUrl');
+    window.location.href = redirectUrl;
+  } else {
+    if (localStorage.getItem('userRole') === 'admin') {
+      window.location.href = '../admin/dashboard.html';
+    } else {
+      window.location.href = '../dashboard/index.html';
+    }
+  }
 }
 </script>
 </body>

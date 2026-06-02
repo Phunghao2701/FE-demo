@@ -17,7 +17,28 @@
         <a href="index.html" class="sidebar-item"><span class="sidebar-icon">📁</span> Projects</a>
       </div>
     </div>
-    <div class="sidebar-footer"><div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--border-radius-md);background:var(--color-bg-hover)"><div class="avatar avatar-sm">JD</div><div><div style="font-size:13px;font-weight:600">John Doe</div></div></div></div>
+        <div class="sidebar-footer" style="display:flex;align-items:center;gap:12px">
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-switcher-btn" style="padding: 5px 10px; border-radius: var(--border-radius-md);">
+          <svg class="globe" viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5;"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <span class="lang-switcher-text" style="font-size: 12px;">Tiếng Việt</span>
+          <svg class="caret" viewBox="0 0 24 24" style="width: 8px; height: 8px; fill: none; stroke: currentColor; stroke-width: 2;"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-switcher-dropdown" style="right: 0; min-width: 120px;">
+          <div class="lang-item active" data-lang="vi" style="font-size: 12px; padding: 6px 10px;">Tiếng Việt</div>
+          <div class="lang-item" data-lang="en" style="font-size: 12px; padding: 6px 10px;">English</div>
+        </div>
+      </div>
+      
+      <!-- Theme Toggle -->
+      <button class="theme-toggle-btn" title="Toggle Theme" style="background:none;border:none;color:var(--color-text-muted);font-size:16px;cursor:pointer">🌙</button>
+
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:var(--border-radius-md);background:var(--color-bg-hover)">
+        <div class="avatar avatar-sm">JD</div>
+        <div><div style="font-size:13px;font-weight:600">John Doe</div></div>
+      </div>
+    </div>
   </aside>
   <div class="main-content">
     <header class="app-header">
@@ -98,14 +119,54 @@
           <!-- Related articles -->
           <div class="chart-container">
             <div class="chart-header"><div class="chart-title">📄 Bài báo liên quan gần đây</div><a href="keywords.html" class="btn btn-ghost btn-sm" style="font-size:12px">Xem theo keyword →</a></div>
-            <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
-              <div class="article-card" style="padding:16px">
-                <div class="article-title" style="font-size:14px"><a href="../articles/detail.html" style="color:var(--color-text-primary)">Attention Is All You Need</a></div>
-                <div class="article-meta"><span>2024</span><span>Nature MI</span><span>87K citations</span></div>
+            <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px">
+              <!-- Premium Article Card 1 -->
+              <div class="article-card">
+                <div class="article-card-header">
+                  <span class="article-card-badge survey">SURVEY</span>
+                  <button class="article-bookmark-btn">🔖</button>
+                </div>
+                <a href="../articles/detail.html" class="article-title-link">A Survey of Large Language Models</a>
+                <div class="article-meta-line">
+                  <span class="article-meta-item">👤 Wayne Xin Zhao et al.</span>
+                  <span class="article-meta-item">📖 arXiv</span>
+                  <span class="article-meta-item">📅 2023</span>
+                  <span class="article-meta-item open-access">🔓 Open Access</span>
+                </div>
+                <p class="article-abstract-text">Large language models (LLMs) have demonstrated remarkable capabilities across NLP tasks. This survey provides a comprehensive overview from BERT and GPT architectures to recent developments.</p>
+                <div class="article-card-footer">
+                  <div class="article-tags-list">
+                    <span class="article-pill-tag">LLM</span>
+                    <span class="article-pill-tag">GPT</span>
+                    <span class="article-pill-tag">BERT</span>
+                    <span class="article-pill-tag">RLHF</span>
+                  </div>
+                  <span class="article-stats-right">💬 8,241</span>
+                </div>
               </div>
-              <div class="article-card" style="padding:16px">
-                <div class="article-title" style="font-size:14px"><a href="../articles/detail.html" style="color:var(--color-text-primary)">GPT-4 Technical Report</a></div>
-                <div class="article-meta"><span>2023</span><span>JMLR</span><span>32K citations</span></div>
+
+              <!-- Premium Article Card 2 -->
+              <div class="article-card">
+                <div class="article-card-header">
+                  <span class="article-card-badge article">ARTICLE</span>
+                  <button class="article-bookmark-btn">🔖</button>
+                </div>
+                <a href="../articles/detail.html" class="article-title-link">Retrieval-Augmented Generation for Large Language Models: A Survey</a>
+                <div class="article-meta-line">
+                  <span class="article-meta-item">👤 Yunfan Gao et al.</span>
+                  <span class="article-meta-item">📖 arXiv</span>
+                  <span class="article-meta-item">📅 2024</span>
+                  <span class="article-meta-item open-access">🔓 Open Access</span>
+                </div>
+                <p class="article-abstract-text">This paper presents a comprehensive review of the state-of-the-art in Retrieval-Augmented Generation (RAG), detailing paradigms, key techniques, and future directions.</p>
+                <div class="article-card-footer">
+                  <div class="article-tags-list">
+                    <span class="article-pill-tag">RAG</span>
+                    <span class="article-pill-tag">LLM</span>
+                    <span class="article-pill-tag">Vector DB</span>
+                  </div>
+                  <span class="article-stats-right">💬 1,420</span>
+                </div>
               </div>
             </div>
           </div>
@@ -131,9 +192,54 @@
 
         <!-- Articles -->
         <div class="tab-panel" id="ptab-articles" style="padding-top:20px">
-          <div style="display:flex;flex-direction:column;gap:12px">
-            <div class="article-card"><div class="article-title"><a href="../articles/detail.html" style="color:var(--color-text-primary)">Attention Is All You Need</a></div><div class="article-meta"><span>2024</span><span>Nature MI</span><span>87K citations</span></div><p class="article-abstract">We propose a new simple network architecture, the Transformer, based solely on attention mechanisms...</p></div>
-            <div class="article-card"><div class="article-title"><a href="../articles/detail.html" style="color:var(--color-text-primary)">BERT: Pre-training of Deep Bidirectional Transformers</a></div><div class="article-meta"><span>2023</span><span>IEEE TNNLS</span><span>45K citations</span></div><p class="article-abstract">We introduce a new language representation model called BERT...</p></div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <!-- Premium Article Card 3 -->
+            <div class="article-card">
+              <div class="article-card-header">
+                <span class="article-card-badge article">ARTICLE</span>
+                <button class="article-bookmark-btn">🔖</button>
+              </div>
+              <a href="../articles/detail.html" class="article-title-link">Attention Is All You Need</a>
+              <div class="article-meta-line">
+                <span class="article-meta-item">👤 Ashish Vaswani et al.</span>
+                <span class="article-meta-item">📖 NeurIPS</span>
+                <span class="article-meta-item">📅 2017</span>
+                <span class="article-meta-item open-access">🔓 Open Access</span>
+              </div>
+              <p class="article-abstract-text">We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.</p>
+              <div class="article-card-footer">
+                <div class="article-tags-list">
+                  <span class="article-pill-tag">Transformer</span>
+                  <span class="article-pill-tag">Attention</span>
+                  <span class="article-pill-tag">Deep Learning</span>
+                </div>
+                <span class="article-stats-right">💬 87,420</span>
+              </div>
+            </div>
+
+            <!-- Premium Article Card 4 -->
+            <div class="article-card">
+              <div class="article-card-header">
+                <span class="article-card-badge survey">SURVEY</span>
+                <button class="article-bookmark-btn">🔖</button>
+              </div>
+              <a href="../articles/detail.html" class="article-title-link">GPT-4 Technical Report</a>
+              <div class="article-meta-line">
+                <span class="article-meta-item">👤 OpenAI</span>
+                <span class="article-meta-item">📖 arXiv</span>
+                <span class="article-meta-item">📅 2023</span>
+                <span class="article-meta-item" style="color:var(--color-text-muted)">🔒 Closed Access</span>
+              </div>
+              <p class="article-abstract-text">We report the development of GPT-4, a large-scale, multimodal model which can accept image and text inputs and produce text outputs.</p>
+              <div class="article-card-footer">
+                <div class="article-tags-list">
+                  <span class="article-pill-tag">GPT-4</span>
+                  <span class="article-pill-tag">Multimodal</span>
+                  <span class="article-pill-tag">RLHF</span>
+                </div>
+                <span class="article-stats-right">💬 32,150</span>
+              </div>
+            </div>
           </div>
         </div>
 

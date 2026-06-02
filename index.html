@@ -45,13 +45,26 @@
     <a href="authors/index.html" class="nav-link">Tác giả</a>
   </div>
   <div class="nav-actions">
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+      <button class="lang-switcher-btn">
+        <svg class="globe" viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5;"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <span class="lang-switcher-text">Tiếng Việt</span>
+        <svg class="caret" viewBox="0 0 24 24" style="width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2;"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="lang-switcher-dropdown">
+        <div class="lang-item active" data-lang="vi">Tiếng Việt</div>
+        <div class="lang-item" data-lang="en">English</div>
+      </div>
+    </div>
     <a href="auth/login.html" class="btn btn-ghost btn-sm">Đăng nhập</a>
-    <a href="auth/register.html" class="btn btn-primary btn-sm">Đăng ký miễn phí</a>
+    <a href="auth/register.html" class="btn btn-primary btn-sm">Đăng ký<span class="hide-mobile"> miễn phí</span></a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" style="position: relative;">
+
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content animate-fadeInUp">
