@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>AI & Machine Learning — Project Detail — ResearchPulse</title>
+  <link rel="stylesheet" href="../assets/css/design-system.css"/>
+  <link rel="stylesheet" href="../assets/css/components.css"/>
+  <link rel="stylesheet" href="../assets/css/layouts.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><a href="../index.html" class="nav-logo"><div class="nav-logo-icon">🔬</div><span class="nav-logo-text">ResearchPulse</span></a></div>
+    <div class="sidebar-content">
+      <div class="sidebar-section"><div class="sidebar-section-label">Của tôi</div>
+        <a href="index.html" class="sidebar-item"><span class="sidebar-icon">📁</span> Projects</a>
+      </div>
+    </div>
+    <div class="sidebar-footer"><div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--border-radius-md);background:var(--color-bg-hover)"><div class="avatar avatar-sm">JD</div><div><div style="font-size:13px;font-weight:600">John Doe</div></div></div></div>
+  </aside>
+  <div class="main-content">
+    <header class="app-header">
+      <div class="header-left">
+        <nav class="breadcrumb">
+          <span class="breadcrumb-item"><a href="index.html">Projects</a></span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-item active">AI & Machine Learning</span>
+        </nav>
+      </div>
+      <div class="header-right">
+        <a href="create.html" class="btn btn-secondary btn-sm">✏️ Chỉnh sửa</a>
+        <button class="btn btn-ghost btn-icon notif-dot">🔔</button>
+        <div class="avatar avatar-sm">JD</div>
+      </div>
+    </header>
+    <div class="page-content">
+      <!-- Project header -->
+      <div style="background:var(--color-bg-secondary);border:1px solid var(--border-color);border-radius:var(--border-radius-xl);padding:32px;margin-bottom:28px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-primary)"></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:16px">
+            <div style="width:56px;height:56px;border-radius:14px;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-size:26px">🤖</div>
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+                <h1 style="font-size:24px;font-weight:800">AI & Machine Learning</h1>
+                <span class="badge badge-success">Active</span>
+              </div>
+              <div style="font-size:13px;color:var(--color-text-muted)">Tạo 15/01/2024 · Cập nhật 2 giờ trước</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;text-align:center">
+            <div><div style="font-size:24px;font-weight:800;color:var(--color-accent)">8</div><div style="font-size:11px;color:var(--color-text-muted)">Journals</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--color-accent)">542</div><div style="font-size:11px;color:var(--color-text-muted)">Articles</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--color-accent)">12</div><div style="font-size:11px;color:var(--color-text-muted)">Keywords</div></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px">
+          <span class="badge badge-default">Computer Science</span>
+          <span class="badge badge-default">Artificial Intelligence</span>
+          <span class="badge badge-default">Machine Learning</span>
+          <span class="badge badge-default">Computer Vision</span>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div data-tabs>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="#ptab-analytics">📊 Analytics</button>
+          <button class="tab-btn" data-tab="#ptab-keywords">🔑 Keywords</button>
+          <button class="tab-btn" data-tab="#ptab-articles">📄 Articles</button>
+          <button class="tab-btn" data-tab="#ptab-journals">📰 Journals</button>
+        </div>
+
+        <!-- Analytics -->
+        <div class="tab-panel active" id="ptab-analytics">
+          <!-- Filters -->
+          <div style="display:flex;align-items:center;gap:12px;margin:20px 0;flex-wrap:wrap">
+            <span style="font-size:13px;color:var(--color-text-muted)">Lọc:</span>
+            <select class="form-select" style="width:auto;font-size:13px"><option>2019–2024</option><option>2022–2024</option><option>2023–2024</option></select>
+            <select class="form-select" style="width:auto;font-size:13px"><option>Tất cả journals</option><option>Nature MI</option><option>IEEE TNNLS</option></select>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+            <div class="chart-container">
+              <div class="chart-header">
+                <div><div class="chart-title">📈 Xu hướng bài báo theo năm</div><div style="font-size:11px;color:var(--color-text-muted)">Tổng số bài báo mỗi năm</div></div>
+              </div>
+              <div style="height:220px"><canvas id="volChart"></canvas></div>
+            </div>
+            <div class="chart-container">
+              <div class="chart-header">
+                <div><div class="chart-title">📊 So sánh Impact Factor</div><div style="font-size:11px;color:var(--color-text-muted)">Các journal trong project</div></div>
+                <select class="form-select" style="width:auto;font-size:11px"><option>Impact Factor</option><option>H-Index</option><option>Cite Score</option></select>
+              </div>
+              <div style="height:220px"><canvas id="metricChart"></canvas></div>
+            </div>
+          </div>
+          <!-- Related articles -->
+          <div class="chart-container">
+            <div class="chart-header"><div class="chart-title">📄 Bài báo liên quan gần đây</div><a href="keywords.html" class="btn btn-ghost btn-sm" style="font-size:12px">Xem theo keyword →</a></div>
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+              <div class="article-card" style="padding:16px">
+                <div class="article-title" style="font-size:14px"><a href="../articles/detail.html" style="color:var(--color-text-primary)">Attention Is All You Need</a></div>
+                <div class="article-meta"><span>2024</span><span>Nature MI</span><span>87K citations</span></div>
+              </div>
+              <div class="article-card" style="padding:16px">
+                <div class="article-title" style="font-size:14px"><a href="../articles/detail.html" style="color:var(--color-text-primary)">GPT-4 Technical Report</a></div>
+                <div class="article-meta"><span>2023</span><span>JMLR</span><span>32K citations</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Keywords -->
+        <div class="tab-panel" id="ptab-keywords" style="padding-top:20px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+            <div style="font-size:15px;font-weight:600">🔥 Top 20 Trending Keywords</div>
+            <a href="keywords.html" class="btn btn-primary btn-sm">Quản lý Keywords →</a>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span class="keyword-tag">Large Language Model <span class="keyword-tag-count">+2.4k</span></span>
+            <span class="keyword-tag watched">RAG ★ <span class="keyword-tag-count">+1.8k</span></span>
+            <span class="keyword-tag">Diffusion <span class="keyword-tag-count">+1.2k</span></span>
+            <span class="keyword-tag watched">Multimodal ★ <span class="keyword-tag-count">+980</span></span>
+            <span class="keyword-tag">RLHF <span class="keyword-tag-count">+760</span></span>
+            <span class="keyword-tag">Vision Transformer <span class="keyword-tag-count">+640</span></span>
+            <span class="keyword-tag">Fine-tuning <span class="keyword-tag-count">+580</span></span>
+            <span class="keyword-tag">Prompt Engineering <span class="keyword-tag-count">+520</span></span>
+          </div>
+        </div>
+
+        <!-- Articles -->
+        <div class="tab-panel" id="ptab-articles" style="padding-top:20px">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="article-card"><div class="article-title"><a href="../articles/detail.html" style="color:var(--color-text-primary)">Attention Is All You Need</a></div><div class="article-meta"><span>2024</span><span>Nature MI</span><span>87K citations</span></div><p class="article-abstract">We propose a new simple network architecture, the Transformer, based solely on attention mechanisms...</p></div>
+            <div class="article-card"><div class="article-title"><a href="../articles/detail.html" style="color:var(--color-text-primary)">BERT: Pre-training of Deep Bidirectional Transformers</a></div><div class="article-meta"><span>2023</span><span>IEEE TNNLS</span><span>45K citations</span></div><p class="article-abstract">We introduce a new language representation model called BERT...</p></div>
+          </div>
+        </div>
+
+        <!-- Journals -->
+        <div class="tab-panel" id="ptab-journals" style="padding-top:20px">
+          <div class="table-wrapper">
+            <table>
+              <thead><tr><th>Tên Journal</th><th>Quartile</th><th>Impact Factor</th><th>Bài báo</th></tr></thead>
+              <tbody>
+                <tr><td><a href="../journals/detail.html" style="color:var(--color-text-primary);font-weight:500">Nature Machine Intelligence</a></td><td><span class="badge badge-accent">Q1</span></td><td style="font-weight:600;color:var(--color-accent)">23.8</td><td>148</td></tr>
+                <tr><td><a href="../journals/detail.html" style="color:var(--color-text-primary);font-weight:500">IEEE TNNLS</a></td><td><span class="badge badge-accent">Q1</span></td><td style="font-weight:600;color:var(--color-accent)">14.2</td><td>94</td></tr>
+                <tr><td><a href="../journals/detail.html" style="color:var(--color-text-primary);font-weight:500">JMLR</a></td><td><span class="badge badge-accent">Q1</span></td><td style="font-weight:600;color:var(--color-accent)">8.9</td><td>72</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/main.js"></script>
+<script>
+const vc = document.getElementById('volChart');
+if(vc) new Chart(vc,{type:'line',data:{labels:['2019','2020','2021','2022','2023','2024'],datasets:[{label:'Bài báo',data:[120,185,240,310,420,542],borderColor:'#00d4ff',backgroundColor:'rgba(0,212,255,0.1)',tension:.4,fill:true,pointBackgroundColor:'#00d4ff',pointRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#5a6278'}},y:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#5a6278'}}}}});
+const mc = document.getElementById('metricChart');
+if(mc) new Chart(mc,{type:'bar',data:{labels:['Nature MI','IEEE TNNLS','JMLR','AI Journal','Pattern Rec.'],datasets:[{label:'IF',data:[23.8,14.2,8.9,14.4,7.5],backgroundColor:['rgba(0,212,255,.7)','rgba(99,102,241,.7)','rgba(245,158,11,.7)','rgba(16,185,129,.7)','rgba(239,68,68,.7)'],borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#5a6278',font:{size:10}}},y:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#5a6278'}}}}});
+</script>
+</body>
+</html>

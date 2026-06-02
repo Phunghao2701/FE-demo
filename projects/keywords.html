@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Keyword Tracking — ResearchPulse</title>
+  <link rel="stylesheet" href="../assets/css/design-system.css"/>
+  <link rel="stylesheet" href="../assets/css/components.css"/>
+  <link rel="stylesheet" href="../assets/css/layouts.css"/>
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><a href="../index.html" class="nav-logo"><div class="nav-logo-icon">🔬</div><span class="nav-logo-text">ResearchPulse</span></a></div>
+    <div class="sidebar-content">
+      <div class="sidebar-section"><div class="sidebar-section-label">Của tôi</div>
+        <a href="index.html" class="sidebar-item"><span class="sidebar-icon">📁</span> Projects</a>
+      </div>
+    </div>
+    <div class="sidebar-footer"><div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--border-radius-md);background:var(--color-bg-hover)"><div class="avatar avatar-sm">JD</div><div><div style="font-size:13px;font-weight:600">John Doe</div></div></div></div>
+  </aside>
+  <div class="main-content">
+    <header class="app-header">
+      <div class="header-left">
+        <nav class="breadcrumb">
+          <span class="breadcrumb-item"><a href="index.html">Projects</a></span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-item"><a href="detail.html">AI & ML</a></span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-item active">Keywords</span>
+        </nav>
+      </div>
+      <div class="header-right"><button class="btn btn-ghost btn-icon notif-dot">🔔</button><div class="avatar avatar-sm">JD</div></div>
+    </header>
+    <div class="page-content">
+      <div class="page-header">
+        <h1 class="page-title">🔑 Keyword Tracking</h1>
+        <p class="page-desc">Theo dõi xu hướng keyword trong project AI & Machine Learning</p>
+      </div>
+
+      <!-- Trending keywords -->
+      <div class="card" style="margin-bottom:24px">
+        <div class="card-header">
+          <div>
+            <div class="card-title">🔥 Top 20 Trending Keywords</div>
+            <div style="font-size:12px;color:var(--color-text-muted)">Tính trong 30 ngày gần nhất</div>
+          </div>
+          <select class="form-select" style="width:auto;font-size:12px"><option>30 ngày</option><option>7 ngày</option><option>90 ngày</option></select>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px">
+          <span class="keyword-tag" onclick="watchKeyword(this,'Large Language Model')">Large Language Model <span class="keyword-tag-count">+2.4k</span></span>
+          <span class="keyword-tag watched" onclick="watchKeyword(this,'RAG')">RAG ★ <span class="keyword-tag-count">+1.8k</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Diffusion')">Diffusion <span class="keyword-tag-count">+1.2k</span></span>
+          <span class="keyword-tag watched" onclick="watchKeyword(this,'Multimodal')">Multimodal ★ <span class="keyword-tag-count">+980</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'RLHF')">RLHF <span class="keyword-tag-count">+760</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Vision Transformer')">Vision Transformer <span class="keyword-tag-count">+640</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Fine-tuning')">Fine-tuning <span class="keyword-tag-count">+580</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Prompt Engineering')">Prompt Engineering <span class="keyword-tag-count">+520</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Chain-of-thought')">Chain-of-thought <span class="keyword-tag-count">+480</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Zero-shot')">Zero-shot <span class="keyword-tag-count">+420</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Knowledge Graph')">Knowledge Graph <span class="keyword-tag-count">+380</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Federated Learning')">Federated Learning <span class="keyword-tag-count">+340</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Contrastive Learning')">Contrastive Learning <span class="keyword-tag-count">+310</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Generative AI')">Generative AI <span class="keyword-tag-count">+290</span></span>
+          <span class="keyword-tag" onclick="watchKeyword(this,'Graph Neural Network')">Graph Neural Network <span class="keyword-tag-count">+260</span></span>
+        </div>
+        <div style="margin-top:16px;padding:12px;background:var(--color-accent-soft);border-radius:var(--border-radius-md);border:1px solid rgba(0,212,255,.15)">
+          <span style="font-size:12px;color:var(--color-accent)">💡 Click vào keyword để theo dõi (★). Các keyword đang watch sẽ hiển thị bài báo mới nhất bên dưới.</span>
+        </div>
+      </div>
+
+      <!-- Watched keywords -->
+      <div class="card" style="margin-bottom:24px">
+        <div class="card-header">
+          <div class="card-title">⭐ Keywords đang theo dõi (2)</div>
+          <button class="btn btn-ghost btn-sm" style="font-size:12px">Quản lý</button>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+          <span class="keyword-tag watched">RAG ★ <span class="keyword-tag-count">+1.8k</span></span>
+          <span class="keyword-tag watched">Multimodal ★ <span class="keyword-tag-count">+980</span></span>
+        </div>
+        <!-- Keyword articles -->
+        <div style="border-top:1px solid var(--border-color);padding-top:16px">
+          <div style="font-size:13px;font-weight:600;color:var(--color-text-muted);margin-bottom:12px">Bài báo mới nhất theo keyword đang watch:</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="article-card" style="padding:14px">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                <div>
+                  <span class="keyword-tag watched" style="font-size:11px;padding:2px 8px;margin-bottom:8px;display:inline-flex">RAG</span>
+                  <div class="article-title" style="font-size:14px"><a href="../articles/detail.html" style="color:var(--color-text-primary)">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a></div>
+                  <div class="article-meta"><span>2024</span><span>Nature MI</span><span>12.4K citations</span></div>
+                </div>
+                <span style="font-size:11px;color:var(--color-text-muted);white-space:nowrap">2 ngày trước</span>
+              </div>
+            </div>
+            <div class="article-card" style="padding:14px">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                <div>
+                  <span class="keyword-tag watched" style="font-size:11px;padding:2px 8px;margin-bottom:8px;display:inline-flex">Multimodal</span>
+                  <div class="article-title" style="font-size:14px"><a href="../articles/detail.html" style="color:var(--color-text-primary)">GPT-4V: A Multimodal Large Language Model</a></div>
+                  <div class="article-meta"><span>2024</span><span>JMLR</span><span>8.2K citations</span></div>
+                </div>
+                <span style="font-size:11px;color:var(--color-text-muted);white-space:nowrap">5 ngày trước</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty state (khi chưa watch keyword) -->
+      <!--
+      <div class="empty-state">
+        <div class="empty-state-icon">🔑</div>
+        <div class="empty-state-title">Chưa theo dõi keyword nào</div>
+        <div class="empty-state-desc">Click vào keyword trong phần Trending để bắt đầu theo dõi và nhận bài báo mới nhất.</div>
+      </div>
+      -->
+    </div>
+  </div>
+</div>
+<!-- Watch success toast (shown briefly) -->
+<div id="watch-toast" style="position:fixed;bottom:24px;right:24px;background:var(--color-bg-card);border:1px solid var(--color-success);border-radius:var(--border-radius-md);padding:14px 20px;display:none;align-items:center;gap:10px;z-index:999;box-shadow:var(--shadow-lg)">
+  <span style="color:var(--color-success)">✅</span>
+  <span id="watch-toast-msg" style="font-size:14px"></span>
+</div>
+<script src="../assets/js/main.js"></script>
+<script>
+function watchKeyword(el, name){
+  const isWatched = el.classList.contains('watched');
+  el.classList.toggle('watched');
+  const txt = el.querySelector('.keyword-tag-count');
+  if(!isWatched){
+    el.innerHTML = name + ' ★ <span class="keyword-tag-count">' + (txt?txt.textContent:'') + '</span>';
+    showToast('Đã theo dõi keyword: ' + name);
+  } else {
+    el.innerHTML = name + ' <span class="keyword-tag-count">' + (txt?txt.textContent:'') + '</span>';
+  }
+}
+function showToast(msg){
+  const t = document.querySelector('#watch-toast');
+  document.querySelector('#watch-toast-msg').textContent = msg;
+  t.style.display='flex';
+  setTimeout(()=>t.style.display='none', 2500);
+}
+</script>
+</body>
+</html>

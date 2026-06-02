@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Đăng nhập — ResearchPulse</title>
+  <link rel="stylesheet" href="../assets/css/design-system.css"/>
+  <link rel="stylesheet" href="../assets/css/components.css"/>
+  <link rel="stylesheet" href="../assets/css/layouts.css"/>
+  <style>
+    .social-btn { display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:11px;border-radius:var(--border-radius-md);background:rgba(255,255,255,0.05);border:1px solid var(--border-color);color:var(--color-text-primary);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;font-family:var(--font-family); }
+    .social-btn:hover{background:rgba(255,255,255,0.09);border-color:var(--border-color-hover);}
+    .visual-stat{margin-bottom:32px;}
+    .visual-stat-num{font-size:36px;font-weight:900;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .visual-stat-label{font-size:13px;color:var(--color-text-muted);margin-top:2px;}
+  </style>
+</head>
+<body>
+<div class="auth-layout">
+  <!-- Visual -->
+  <div class="auth-visual">
+    <div class="auth-visual-bg"></div>
+    <div class="auth-visual-grid"></div>
+    <div class="auth-visual-content">
+      <a href="../index.html" class="nav-logo" style="margin-bottom:48px;display:inline-flex">
+        <div class="nav-logo-icon">🔬</div>
+        <span class="nav-logo-text">ResearchPulse</span>
+      </a>
+      <div class="visual-stat"><div class="visual-stat-num">200M+</div><div class="visual-stat-label">Bài báo khoa học</div></div>
+      <div class="visual-stat"><div class="visual-stat-num">48K+</div><div class="visual-stat-label">Keywords đang theo dõi</div></div>
+      <div class="visual-stat"><div class="visual-stat-num">2019–2024</div><div class="visual-stat-label">Dữ liệu 5 năm liên tục</div></div>
+      <p style="color:var(--color-text-muted);font-size:13px;margin-top:48px;line-height:1.7">
+        "ResearchPulse giúp tôi nắm bắt xu hướng nghiên cứu nhanh hơn bao giờ hết."<br/>
+        <span style="color:var(--color-text-secondary);font-weight:500">— Sinh viên nghiên cứu, FPT University</span>
+      </p>
+    </div>
+  </div>
+  <!-- Form -->
+  <div class="auth-form-area">
+    <div class="auth-form-wrap">
+      <h1 class="auth-title">Đăng nhập</h1>
+      <p class="auth-subtitle">Chào mừng trở lại! Vui lòng nhập thông tin.</p>
+      <!-- Social -->
+      <button class="social-btn" style="margin-bottom:20px">
+        <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.707A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.039l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.961L3.964 7.293C4.672 5.166 6.656 3.58 9 3.58z"/></svg>
+        Tiếp tục với Google
+      </button>
+      <div class="divider-label">hoặc</div>
+      <!-- Form -->
+      <form class="auth-form" style="margin-top:20px" onsubmit="return false">
+        <div class="form-group">
+          <label class="form-label required">Email</label>
+          <div class="input-wrapper">
+            <span class="input-icon-left">📧</span>
+            <input type="email" class="form-input has-icon-left" id="login-email" placeholder="name@email.com"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <label class="form-label required">Mật khẩu</label>
+            <a href="forgot-password.html" style="font-size:12px;color:var(--color-accent)">Quên mật khẩu?</a>
+          </div>
+          <div class="input-wrapper">
+            <span class="input-icon-left">🔒</span>
+            <input type="password" class="form-input has-icon-left has-icon-right" id="login-password" placeholder="Nhập mật khẩu"/>
+            <button type="button" class="input-icon-right" data-password-toggle="#login-password" style="background:none;border:none;cursor:pointer">👁️</button>
+          </div>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="remember"/><label class="form-check-label" for="remember">Ghi nhớ đăng nhập</label>
+        </div>
+        <!-- Error state example (hidden) -->
+        <div class="alert alert-error" id="login-error" style="display:none">
+          <span class="alert-icon">⚠️</span>
+          <span>Email hoặc mật khẩu không đúng. Vui lòng thử lại.</span>
+        </div>
+        <button type="button" class="btn btn-primary" style="width:100%;padding:13px" onclick="handleLogin()">Đăng nhập</button>
+      </form>
+      <div class="auth-footer">Chưa có tài khoản? <a href="register.html">Đăng ký miễn phí</a></div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/main.js"></script>
+<script>
+function handleLogin(){
+  const email = document.querySelector('#login-email').value;
+  const pass = document.querySelector('#login-password').value;
+  if(!email || !pass){ document.querySelector('#login-error').style.display='flex'; return; }
+  window.location.href = '../dashboard/index.html';
+}
+</script>
+</body>
+</html>

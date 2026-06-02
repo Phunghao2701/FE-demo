@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Dashboard — ResearchPulse</title>
+  <link rel="stylesheet" href="../assets/css/design-system.css"/>
+  <link rel="stylesheet" href="../assets/css/components.css"/>
+  <link rel="stylesheet" href="../assets/css/layouts.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .trend-chart-area{height:200px;}
+    .recent-project-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-color);}
+    .recent-project-item:last-child{border-bottom:none;}
+    .project-icon{width:40px;height:40px;border-radius:10px;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+    .quick-action{display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px;background:var(--color-bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-lg);cursor:pointer;transition:all .2s;text-decoration:none;}
+    .quick-action:hover{border-color:var(--border-accent);box-shadow:var(--shadow-accent);transform:translateY(-2px);}
+    .quick-action-icon{font-size:28px;}
+    .quick-action-label{font-size:12px;font-weight:600;color:var(--color-text-secondary);}
+  </style>
+</head>
+<body>
+<div class="app-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon">🔬</div><span class="nav-logo-text">ResearchPulse</span>
+      </a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Tổng quan</div>
+        <a href="index.html" class="sidebar-item active">
+          <span class="sidebar-icon">🏠</span> Dashboard
+        </a>
+        <a href="../catalog/index.html" class="sidebar-item">
+          <span class="sidebar-icon">🔍</span> Tìm kiếm
+        </a>
+        <a href="../geography/index.html" class="sidebar-item">
+          <span class="sidebar-icon">🌏</span> Địa lý
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Dữ liệu</div>
+        <a href="../journals/index.html" class="sidebar-item">
+          <span class="sidebar-icon">📰</span> Journals
+        </a>
+        <a href="../articles/index.html" class="sidebar-item">
+          <span class="sidebar-icon">📄</span> Articles
+        </a>
+        <a href="../authors/index.html" class="sidebar-item">
+          <span class="sidebar-icon">👥</span> Authors
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Của tôi</div>
+        <a href="../projects/index.html" class="sidebar-item">
+          <span class="sidebar-icon">📁</span> Projects
+          <span class="sidebar-badge"><span class="badge badge-accent">3</span></span>
+        </a>
+        <a href="../profile/index.html" class="sidebar-item">
+          <span class="sidebar-icon">👤</span> Hồ sơ
+        </a>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--border-radius-md);background:var(--color-bg-hover)">
+        <div class="avatar avatar-sm" style="background:var(--gradient-primary)">JD</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:600;truncate">John Doe</div>
+          <div style="font-size:11px;color:var(--color-text-muted);truncate">john@example.com</div>
+        </div>
+        <a href="../auth/login.html" style="color:var(--color-text-muted);font-size:16px">⏏</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <button id="sidebar-toggle" class="btn btn-ghost btn-icon" style="display:none">☰</button>
+        <div style="position:relative">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--color-text-muted);font-size:14px">🔍</span>
+          <input type="text" class="header-search" placeholder="Tìm kiếm nhanh..."/>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="btn btn-ghost btn-icon notif-dot">🔔</button>
+        <div class="avatar avatar-sm" style="cursor:pointer">JD</div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-content">
+      <!-- Page Header -->
+      <div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between">
+        <div>
+          <h1 class="page-title">Chào buổi sáng, John! 👋</h1>
+          <p class="page-desc">Hôm nay có gì mới trong lĩnh vực nghiên cứu của bạn?</p>
+        </div>
+        <a href="../projects/create.html" class="btn btn-primary">+ Tạo Project mới</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid" style="margin-bottom:32px">
+        <div class="stat-card">
+          <div class="stat-card-icon">📁</div>
+          <div class="stat-card-value gradient-text" data-count="3">0</div>
+          <div class="stat-card-label">Projects đang theo dõi</div>
+          <div class="stat-card-change up">▲ +1 tuần này</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon">🔑</div>
+          <div class="stat-card-value gradient-text" data-count="24">0</div>
+          <div class="stat-card-label">Keywords đang watch</div>
+          <div class="stat-card-change up">▲ +5 tuần này</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon">📄</div>
+          <div class="stat-card-value gradient-text" data-count="1284">0</div>
+          <div class="stat-card-label">Bài báo trong projects</div>
+          <div class="stat-card-change up">▲ +62 tháng này</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon">📰</div>
+          <div class="stat-card-value gradient-text" data-count="18">0</div>
+          <div class="stat-card-label">Journals theo dõi</div>
+          <div class="stat-card-change">— Không đổi</div>
+        </div>
+      </div>
+
+      <!-- Main grid -->
+      <div style="display:grid;grid-template-columns:1fr 340px;gap:24px;margin-bottom:24px">
+        <!-- Trend chart -->
+        <div class="chart-container">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Xu hướng publication</div>
+              <div style="font-size:12px;color:var(--color-text-muted)">Số bài báo theo năm trong projects của bạn</div>
+            </div>
+            <select class="form-select" style="width:auto;font-size:12px;padding:6px 28px 6px 10px">
+              <option>2019–2024</option><option>2022–2024</option>
+            </select>
+          </div>
+          <div class="chart-area trend-chart-area">
+            <canvas id="trendChart"></canvas>
+          </div>
+        </div>
+        <!-- Recent projects -->
+        <div class="card" style="padding:24px">
+          <div class="card-header">
+            <div class="card-title">Projects gần đây</div>
+            <a href="../projects/index.html" class="btn btn-ghost btn-sm" style="font-size:12px">Xem tất cả →</a>
+          </div>
+          <div class="recent-project-item">
+            <div class="project-icon">🤖</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">AI & Machine Learning</div>
+              <div style="font-size:12px;color:var(--color-text-muted)">8 journals · 542 bài</div>
+            </div>
+            <span class="badge badge-success">Active</span>
+          </div>
+          <div class="recent-project-item">
+            <div class="project-icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">🧬</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Bioinformatics 2024</div>
+              <div style="font-size:12px;color:var(--color-text-muted)">5 journals · 321 bài</div>
+            </div>
+            <span class="badge badge-accent">New</span>
+          </div>
+          <div class="recent-project-item">
+            <div class="project-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">🌱</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Climate Science</div>
+              <div style="font-size:12px;color:var(--color-text-muted)">3 journals · 421 bài</div>
+            </div>
+            <span class="badge badge-default">Active</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px">
+        <!-- Trending keywords -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🔥 Trending Keywords</div>
+            <a href="../projects/keywords.html" class="btn btn-ghost btn-sm" style="font-size:12px">Xem thêm →</a>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span class="keyword-tag">Large Language Model <span class="keyword-tag-count">+2.4k</span></span>
+            <span class="keyword-tag">RAG <span class="keyword-tag-count">+1.8k</span></span>
+            <span class="keyword-tag">Diffusion <span class="keyword-tag-count">+1.2k</span></span>
+            <span class="keyword-tag">Multimodal <span class="keyword-tag-count">+980</span></span>
+            <span class="keyword-tag">RLHF <span class="keyword-tag-count">+760</span></span>
+            <span class="keyword-tag">Vision Transformer <span class="keyword-tag-count">+640</span></span>
+            <span class="keyword-tag watched">Fine-tuning ★</span>
+            <span class="keyword-tag watched">Prompt Engineering ★</span>
+          </div>
+        </div>
+        <!-- Quick actions -->
+        <div class="card">
+          <div class="card-header"><div class="card-title">⚡ Truy cập nhanh</div></div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+            <a href="../catalog/index.html" class="quick-action">
+              <span class="quick-action-icon">🔍</span><span class="quick-action-label">Tìm kiếm</span>
+            </a>
+            <a href="../journals/index.html" class="quick-action">
+              <span class="quick-action-icon">📰</span><span class="quick-action-label">Journals</span>
+            </a>
+            <a href="../geography/index.html" class="quick-action">
+              <span class="quick-action-icon">🌏</span><span class="quick-action-label">Địa lý</span>
+            </a>
+            <a href="../authors/index.html" class="quick-action">
+              <span class="quick-action-icon">🏆</span><span class="quick-action-label">Leaderboard</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Author leaderboard preview -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">🏆 Top Authors — Tuần này</div>
+          <a href="../authors/index.html" class="btn btn-ghost btn-sm" style="font-size:12px">Xem bảng xếp hạng đầy đủ →</a>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>#</th><th>Tác giả</th><th>Lĩnh vực</th><th>Bài báo</th><th>Citations</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><div class="rank-badge rank-1">1</div></td>
+                <td><div style="display:flex;align-items:center;gap:10px"><div class="avatar avatar-sm">YL</div><span style="font-weight:500;color:var(--color-text-primary)">Yann LeCun</span></div></td>
+                <td><span class="badge badge-accent">Computer Vision</span></td>
+                <td style="font-weight:600;color:var(--color-text-primary)">847</td>
+                <td><span style="color:var(--color-success)">↑ 1.2M</span></td>
+              </tr>
+              <tr>
+                <td><div class="rank-badge rank-2">2</div></td>
+                <td><div style="display:flex;align-items:center;gap:10px"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">GH</div><span style="font-weight:500;color:var(--color-text-primary)">Geoffrey Hinton</span></div></td>
+                <td><span class="badge badge-purple">Deep Learning</span></td>
+                <td style="font-weight:600;color:var(--color-text-primary)">612</td>
+                <td><span style="color:var(--color-success)">↑ 980K</span></td>
+              </tr>
+              <tr>
+                <td><div class="rank-badge rank-3">3</div></td>
+                <td><div style="display:flex;align-items:center;gap:10px"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#10b981,#059669)">AB</div><span style="font-weight:500;color:var(--color-text-primary)">Andrew Ng</span></div></td>
+                <td><span class="badge badge-success">Machine Learning</span></td>
+                <td style="font-weight:600;color:var(--color-text-primary)">589</td>
+                <td><span style="color:var(--color-success)">↑ 876K</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+const ctx = document.getElementById('trendChart');
+if(ctx){
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2019','2020','2021','2022','2023','2024'],
+      datasets: [
+        { label:'AI & ML', data:[120,185,240,310,420,542], borderColor:'#00d4ff', backgroundColor:'rgba(0,212,255,0.08)', tension:.4, fill:true, pointBackgroundColor:'#00d4ff', pointRadius:4 },
+        { label:'Bioinformatics', data:[80,110,145,190,260,321], borderColor:'#6366f1', backgroundColor:'rgba(99,102,241,0.08)', tension:.4, fill:true, pointBackgroundColor:'#6366f1', pointRadius:4 },
+        { label:'Climate', data:[200,230,280,330,380,421], borderColor:'#f59e0b', backgroundColor:'rgba(245,158,11,0.08)', tension:.4, fill:true, pointBackgroundColor:'#f59e0b', pointRadius:4 }
+      ]
+    },
+    options: { responsive:true, maintainAspectRatio:false, plugins:{ legend:{ labels:{ color:'#9ba3b8', font:{size:12} } } }, scales:{ x:{ grid:{ color:'rgba(255,255,255,0.04)' }, ticks:{ color:'#5a6278' } }, y:{ grid:{ color:'rgba(255,255,255,0.04)' }, ticks:{ color:'#5a6278' } } } }
+  });
+}
+</script>
+</body>
+</html>

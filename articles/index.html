@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Articles — ResearchPulse</title>
+  <link rel="stylesheet" href="../assets/css/design-system.css"/>
+  <link rel="stylesheet" href="../assets/css/components.css"/>
+  <link rel="stylesheet" href="../assets/css/layouts.css"/>
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><a href="../index.html" class="nav-logo"><div class="nav-logo-icon">🔬</div><span class="nav-logo-text">ResearchPulse</span></a></div>
+    <div class="sidebar-content">
+      <div class="sidebar-section"><div class="sidebar-section-label">Tổng quan</div>
+        <a href="../dashboard/index.html" class="sidebar-item"><span class="sidebar-icon">🏠</span> Dashboard</a>
+        <a href="../catalog/index.html" class="sidebar-item"><span class="sidebar-icon">🔍</span> Tìm kiếm</a>
+      </div>
+      <div class="sidebar-section"><div class="sidebar-section-label">Dữ liệu</div>
+        <a href="../journals/index.html" class="sidebar-item"><span class="sidebar-icon">📰</span> Journals</a>
+        <a href="index.html" class="sidebar-item active"><span class="sidebar-icon">📄</span> Articles</a>
+        <a href="../authors/index.html" class="sidebar-item"><span class="sidebar-icon">👥</span> Authors</a>
+      </div>
+      <div class="sidebar-section"><div class="sidebar-section-label">Của tôi</div>
+        <a href="../projects/index.html" class="sidebar-item"><span class="sidebar-icon">📁</span> Projects</a>
+        <a href="../profile/index.html" class="sidebar-item"><span class="sidebar-icon">👤</span> Hồ sơ</a>
+      </div>
+    </div>
+    <div class="sidebar-footer"><div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--border-radius-md);background:var(--color-bg-hover)"><div class="avatar avatar-sm">JD</div><div><div style="font-size:13px;font-weight:600">John Doe</div></div></div></div>
+  </aside>
+  <div class="main-content">
+    <header class="app-header">
+      <div class="header-left"><nav class="breadcrumb"><span class="breadcrumb-item"><a href="../dashboard/index.html">Home</a></span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Articles</span></nav></div>
+      <div class="header-right"><button class="btn btn-ghost btn-icon notif-dot">🔔</button><div class="avatar avatar-sm">JD</div></div>
+    </header>
+    <div class="page-content">
+      <div class="page-header"><h1 class="page-title">Articles</h1><p class="page-desc">Duyệt toàn bộ bài báo trong hệ thống</p></div>
+      <!-- Search & Filter -->
+      <div style="display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap">
+        <div class="search-wrapper" style="flex:1;min-width:280px">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" style="height:42px" placeholder="Tìm bài báo, tác giả, DOI..."/>
+        </div>
+        <select class="form-select" style="width:160px">><option>Tất cả năm</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option></select>
+        <select class="form-select" style="width:200px">><option>Tất cả journal</option><option>Nature MI</option><option>IEEE TNNLS</option><option>JMLR</option></select>
+        <button class="btn btn-secondary">⚙ Lọc nâng cao</button>
+      </div>
+      <!-- Results info -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+        <div style="font-size:14px;color:var(--color-text-muted)">Tìm thấy <strong style="color:var(--color-text-primary)">24,810</strong> bài báo</div>
+        <select class="form-select" style="width:auto;font-size:13px">><option>Mới nhất</option><option>Citations cao nhất</option><option>Relevance</option></select>
+      </div>
+      <!-- Article List -->
+      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:28px">
+        <div class="article-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+            <div style="flex:1">
+              <h2 class="article-title"><a href="detail.html" style="color:var(--color-text-primary)">Attention Is All You Need</a></h2>
+              <div class="article-meta">
+                <span>📅 2024</span><span>📰 Nature Machine Intelligence</span>
+                <span>🔗 DOI: 10.1038/s42256-024-001</span><span>👤 Vaswani, A. et al.</span>
+              </div>
+              <p class="article-abstract">We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely...</p>
+              <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
+                <span class="tag">Transformer</span><span class="tag">Attention</span><span class="tag">NLP</span>
+              </div>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:22px;font-weight:800;color:var(--color-accent)">87K</div>
+              <div style="font-size:11px;color:var(--color-text-muted)">Citations</div>
+              <button class="btn btn-ghost btn-sm" style="margin-top:8px">🔖</button>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+            <div style="flex:1">
+              <h2 class="article-title"><a href="detail.html" style="color:var(--color-text-primary)">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a></h2>
+              <div class="article-meta">
+                <span>📅 2023</span><span>📰 IEEE TNNLS</span>
+                <span>🔗 DOI: 10.1109/tnnls-2023-002</span><span>👤 Devlin, J. et al.</span>
+              </div>
+              <p class="article-abstract">We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers...</p>
+              <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
+                <span class="tag">BERT</span><span class="tag">Pre-training</span><span class="tag">Language Model</span>
+              </div>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:22px;font-weight:800;color:var(--color-accent)">45K</div>
+              <div style="font-size:11px;color:var(--color-text-muted)">Citations</div>
+              <button class="btn btn-ghost btn-sm" style="margin-top:8px">🔖</button>
+            </div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+            <div style="flex:1">
+              <h2 class="article-title"><a href="detail.html" style="color:var(--color-text-primary)">GPT-4 Technical Report: Capabilities and Limitations</a></h2>
+              <div class="article-meta">
+                <span>📅 2023</span><span>📰 JMLR</span>
+                <span>🔗 DOI: 10.5555/jmlr-2023-003</span><span>👤 OpenAI Team</span>
+              </div>
+              <p class="article-abstract">GPT-4 is a large multimodal model that accepts image and text inputs and produces text outputs. The model exhibited human-level performance on various professional benchmarks...</p>
+              <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
+                <span class="tag">GPT-4</span><span class="tag">LLM</span><span class="tag">Multimodal</span>
+              </div>
+            </div>
+            <div style="text-align:right;flex-shrink:0">
+              <div style="font-size:22px;font-weight:800;color:var(--color-accent)">32K</div>
+              <div style="font-size:11px;color:var(--color-text-muted)">Citations</div>
+              <button class="btn btn-ghost btn-sm" style="margin-top:8px">🔖</button>
+            </div>
+          </div>
+        </div>
+        <!-- Empty state example -->
+        <!-- <div class="empty-state"><div class="empty-state-icon">📄</div><div class="empty-state-title">Không tìm thấy bài báo</div><div class="empty-state-desc">Thử thay đổi từ khóa hoặc bộ lọc tìm kiếm.</div></div> -->
+      </div>
+      <div style="display:flex;justify-content:center">
+        <div class="pagination">
+          <button class="page-btn disabled">‹</button>
+          <button class="page-btn active">1</button><button class="page-btn">2</button><button class="page-btn">3</button><span style="color:var(--color-text-muted);padding:0 4px">...</span><button class="page-btn">496</button><button class="page-btn">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

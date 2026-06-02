@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Manage Articles — Admin — ResearchPulse</title>
+  <link rel="stylesheet" href="../assets/css/design-system.css"/>
+  <link rel="stylesheet" href="../assets/css/components.css"/>
+  <link rel="stylesheet" href="../assets/css/layouts.css"/>
+  <style>.admin-sidebar{background:#0a0c10!important;border-right:1px solid rgba(255,255,255,0.04)!important;}</style>
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar admin-sidebar">
+    <div class="sidebar-header" style="background:#0a0c10;border-bottom:1px solid rgba(255,255,255,0.04)">
+      <div style="display:flex;align-items:center;gap:10px"><div class="nav-logo-icon">🔬</div><div><div class="nav-logo-text" style="font-size:14px">ResearchPulse</div><span class="admin-badge">ADMIN</span></div></div>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-section"><div class="sidebar-section-label">Admin</div>
+        <a href="dashboard.html" class="sidebar-item"><span class="sidebar-icon">📊</span> Dashboard</a>
+        <a href="journals.html" class="sidebar-item"><span class="sidebar-icon">📰</span> Manage Journals</a>
+        <a href="articles.html" class="sidebar-item active" style="background:rgba(239,68,68,.12);color:#f87171"><span class="sidebar-icon">📄</span> Manage Articles</a>
+        <a href="volumes.html" class="sidebar-item"><span class="sidebar-icon">📚</span> Manage Volumes</a>
+      </div>
+    </div>
+    <div class="sidebar-footer" style="background:#0a0c10"><div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--border-radius-md);background:rgba(255,255,255,0.05)"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#ef4444,#dc2626)">AD</div><div><div style="font-size:13px;font-weight:600">Admin User</div></div></div></div>
+  </aside>
+  <div class="main-content">
+    <header class="app-header" style="background:#0a0c10">
+      <div class="header-left"><nav class="breadcrumb"><span class="breadcrumb-item"><a href="dashboard.html">Admin</a></span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Articles</span></nav></div>
+      <div class="header-right"><span class="badge badge-error" style="background:var(--color-error-bg);color:var(--color-error)">⚠️ Admin Mode</span><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#ef4444,#dc2626)">AD</div></div>
+    </header>
+    <div class="page-content">
+      <div class="page-header" style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><h1 class="page-title">Manage Articles</h1><p class="page-desc">Thêm, sửa, xóa và khôi phục articles</p></div>
+        <button class="btn btn-primary" data-modal-open="#article-modal">+ Thêm Article</button>
+      </div>
+      <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap">
+        <input type="text" class="form-input" style="width:320px" placeholder="🔍 Tìm bài báo, DOI, tác giả..."/>
+        <select class="form-select" style="width:auto"><option>Tất cả</option><option>Active</option><option>Deleted</option></select>
+        <select class="form-select" style="width:auto"><option>Tất cả năm</option><option>2024</option><option>2023</option><option>2022</option></select>
+        <select class="form-select" style="width:auto"><option>Tất cả journal</option><option>Nature MI</option><option>IEEE TNNLS</option></select>
+      </div>
+      <div class="table-wrapper">
+        <table class="table-sortable">
+          <thead><tr><th>ID</th><th>Tiêu đề ↕</th><th>Journal</th><th>Năm</th><th>DOI</th><th>Citations</th><th>Status</th><th>Thao tác</th></tr></thead>
+          <tbody>
+            <tr>
+              <td style="color:var(--color-text-muted);font-family:var(--font-mono);font-size:11px">#10001</td>
+              <td style="max-width:260px"><div style="font-size:13px;font-weight:500;color:var(--color-text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Attention Is All You Need</div><div style="font-size:11px;color:var(--color-text-muted)">Vaswani et al.</div></td>
+              <td><span class="badge badge-default" style="font-size:11px">Nature MI</span></td>
+              <td>2024</td>
+              <td style="font-family:var(--font-mono);font-size:11px;color:var(--color-accent)">10.1038/s42256-024-001</td>
+              <td style="font-weight:600">87K</td>
+              <td><span class="badge badge-success">Active</span></td>
+              <td><div style="display:flex;gap:6px"><button class="btn btn-ghost btn-sm" data-modal-open="#article-modal">✏️</button><button class="btn btn-ghost btn-sm" style="color:var(--color-error)" data-modal-open="#art-delete-modal">🗑️</button></div></td>
+            </tr>
+            <tr>
+              <td style="color:var(--color-text-muted);font-family:var(--font-mono);font-size:11px">#10002</td>
+              <td style="max-width:260px"><div style="font-size:13px;font-weight:500;color:var(--color-text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">BERT: Pre-training of Deep Bidirectional Transformers</div><div style="font-size:11px;color:var(--color-text-muted)">Devlin et al.</div></td>
+              <td><span class="badge badge-default" style="font-size:11px">IEEE TNNLS</span></td>
+              <td>2023</td>
+              <td style="font-family:var(--font-mono);font-size:11px;color:var(--color-accent)">10.1109/tnnls-2023-002</td>
+              <td style="font-weight:600">45K</td>
+              <td><span class="badge badge-success">Active</span></td>
+              <td><div style="display:flex;gap:6px"><button class="btn btn-ghost btn-sm" data-modal-open="#article-modal">✏️</button><button class="btn btn-ghost btn-sm" style="color:var(--color-error)" data-modal-open="#art-delete-modal">🗑️</button></div></td>
+            </tr>
+            <tr style="opacity:.6">
+              <td style="color:var(--color-text-muted);font-family:var(--font-mono);font-size:11px">#10003</td>
+              <td style="max-width:260px"><div style="font-size:13px;font-weight:500;text-decoration:line-through;color:var(--color-text-muted)">Old Paper 2019</div></td>
+              <td>—</td><td>2019</td><td>—</td><td>—</td>
+              <td><span class="badge badge-error">Deleted</span></td>
+              <td><button class="btn btn-ghost btn-sm" style="color:var(--color-success)" data-modal-open="#art-restore-modal">♻️</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:20px">
+        <div class="pagination"><button class="page-btn disabled">‹</button><button class="page-btn active">1</button><button class="page-btn">2</button><button class="page-btn">3</button><span style="color:var(--color-text-muted);padding:0 4px">...</span><button class="page-btn">49620</button><button class="page-btn">›</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Article form modal -->
+<div class="modal-overlay" id="article-modal" style="display:none">
+  <div class="modal modal-lg">
+    <div class="modal-header"><div class="modal-title">📄 Thêm / Sửa Article</div><button class="modal-close" data-modal-close="#article-modal">✕</button></div>
+    <div class="modal-body">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="form-group"><label class="form-label required">Tiêu đề bài báo</label><input type="text" class="form-input" value="Attention Is All You Need"/></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div class="form-group"><label class="form-label required">Journal</label><select class="form-select"><option selected>Nature Machine Intelligence</option><option>IEEE TNNLS</option><option>JMLR</option></select></div>
+          <div class="form-group"><label class="form-label required">Năm xuất bản</label><input type="number" class="form-input" value="2024"/></div>
+          <div class="form-group"><label class="form-label">DOI</label><input type="text" class="form-input" value="10.1038/s42256-024-001" placeholder="10.xxxx/xxxxx"/></div>
+          <div class="form-group"><label class="form-label">Volume</label><select class="form-select"><option>Volume 6 (2024)</option><option>Volume 5 (2023)</option></select></div>
+        </div>
+        <div class="form-group"><label class="form-label">Tác giả (phân cách bằng dấu phẩy)</label><input type="text" class="form-input" value="Vaswani, A., Shazeer, N., Parmar, N."/></div>
+        <div class="form-group"><label class="form-label">Abstract</label><textarea class="form-textarea" style="min-height:120px">We propose a new simple network architecture, the Transformer...</textarea></div>
+        <div class="form-group"><label class="form-label">Keywords (phân cách bằng dấu phẩy)</label><input type="text" class="form-input" value="Transformer, Attention, NLP"/></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" data-modal-close="#article-modal">Hủy</button>
+      <button class="btn btn-primary" onclick="document.querySelector('#article-modal').style.display='none';document.body.style.overflow=''">💾 Lưu Article</button>
+    </div>
+  </div>
+</div>
+<!-- Delete -->
+<div class="modal-overlay" id="art-delete-modal" style="display:none">
+  <div class="modal"><div class="modal-header"><div class="modal-title">🗑️ Xóa Article?</div><button class="modal-close" data-modal-close="#art-delete-modal">✕</button></div>
+  <div class="modal-body"><div class="alert alert-warning" style="margin-bottom:12px"><span class="alert-icon">⚠️</span><span>Xóa mềm — có thể khôi phục sau.</span></div><p>Xóa <strong>"Attention Is All You Need"</strong>?</p></div>
+  <div class="modal-footer"><button class="btn btn-secondary" data-modal-close="#art-delete-modal">Hủy</button><button class="btn btn-danger" onclick="document.querySelector('#art-delete-modal').style.display='none';document.body.style.overflow=''">Xóa mềm</button></div></div>
+</div>
+<!-- Restore -->
+<div class="modal-overlay" id="art-restore-modal" style="display:none">
+  <div class="modal"><div class="modal-header"><div class="modal-title">♻️ Khôi phục Article?</div><button class="modal-close" data-modal-close="#art-restore-modal">✕</button></div>
+  <div class="modal-body"><p>Khôi phục <strong>"Old Paper 2019"</strong>?</p></div>
+  <div class="modal-footer"><button class="btn btn-secondary" data-modal-close="#art-restore-modal">Hủy</button><button class="btn btn-primary" style="background:var(--color-success)" onclick="document.querySelector('#art-restore-modal').style.display='none';document.body.style.overflow=''">♻️ Khôi phục</button></div></div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

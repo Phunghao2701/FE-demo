@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Geography Statistics — ResearchPulse</title>
+  <link rel="stylesheet" href="../assets/css/design-system.css"/>
+  <link rel="stylesheet" href="../assets/css/components.css"/>
+  <link rel="stylesheet" href="../assets/css/layouts.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .country-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border-color);cursor:pointer;transition:background .15s;border-radius:var(--border-radius-sm);}
+    .country-row:last-child{border-bottom:none;}
+    .country-row:hover{background:var(--color-bg-hover);padding-left:8px;}
+    .map-placeholder{background:var(--color-bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-lg);height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--color-text-muted);gap:12px;}
+  </style>
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><a href="../index.html" class="nav-logo"><div class="nav-logo-icon">🔬</div><span class="nav-logo-text">ResearchPulse</span></a></div>
+    <div class="sidebar-content">
+      <div class="sidebar-section"><div class="sidebar-section-label">Tổng quan</div>
+        <a href="../dashboard/index.html" class="sidebar-item"><span class="sidebar-icon">🏠</span> Dashboard</a>
+        <a href="../catalog/index.html" class="sidebar-item"><span class="sidebar-icon">🔍</span> Tìm kiếm</a>
+        <a href="index.html" class="sidebar-item active"><span class="sidebar-icon">🌏</span> Địa lý</a>
+      </div>
+      <div class="sidebar-section"><div class="sidebar-section-label">Dữ liệu</div>
+        <a href="../journals/index.html" class="sidebar-item"><span class="sidebar-icon">📰</span> Journals</a>
+        <a href="../articles/index.html" class="sidebar-item"><span class="sidebar-icon">📄</span> Articles</a>
+        <a href="../authors/index.html" class="sidebar-item"><span class="sidebar-icon">👥</span> Authors</a>
+      </div>
+      <div class="sidebar-section"><div class="sidebar-section-label">Của tôi</div>
+        <a href="../projects/index.html" class="sidebar-item"><span class="sidebar-icon">📁</span> Projects</a>
+      </div>
+    </div>
+    <div class="sidebar-footer"><div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--border-radius-md);background:var(--color-bg-hover)"><div class="avatar avatar-sm">JD</div><div><div style="font-size:13px;font-weight:600">John Doe</div></div></div></div>
+  </aside>
+  <div class="main-content">
+    <header class="app-header">
+      <div class="header-left"><nav class="breadcrumb"><span class="breadcrumb-item active">🌏 Địa lý</span></nav></div>
+      <div class="header-right"><button class="btn btn-ghost btn-icon notif-dot">🔔</button><div class="avatar avatar-sm">JD</div></div>
+    </header>
+    <div class="page-content">
+      <div class="page-header">
+        <h1 class="page-title">🌏 Geography Statistics</h1>
+        <p class="page-desc">Thống kê số lượng journal và bài báo theo quốc gia và khu vực</p>
+      </div>
+      <!-- Stats -->
+      <div class="stats-grid" style="margin-bottom:28px">
+        <div class="stat-card"><div class="stat-card-icon">🌍</div><div class="stat-card-value gradient-text" data-count="142">0</div><div class="stat-card-label">Quốc gia</div></div>
+        <div class="stat-card"><div class="stat-card-icon">🏙️</div><div class="stat-card-value gradient-text" data-count="892">0</div><div class="stat-card-label">Region/Thành phố</div></div>
+        <div class="stat-card"><div class="stat-card-icon">📰</div><div class="stat-card-value gradient-text" data-count="12480">0</div><div class="stat-card-label">Journals</div></div>
+        <div class="stat-card"><div class="stat-card-icon">📄</div><div class="stat-card-value gradient-text" data-count="200000000">0</div><div class="stat-card-label">Bài báo</div></div>
+      </div>
+
+      <!-- Tabs -->
+      <div data-tabs>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="#geo-overview">🗺️ Tổng quan</button>
+          <button class="tab-btn" data-tab="#geo-country">🌍 Countries</button>
+          <button class="tab-btn" data-tab="#geo-region">🏙️ Regions</button>
+        </div>
+
+        <!-- Overview: map + bar -->
+        <div class="tab-panel active" id="geo-overview" style="padding-top:20px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+            <div class="map-placeholder">
+              <div style="font-size:60px">🗺️</div>
+              <div style="font-size:15px;font-weight:600">World Map</div>
+              <div style="font-size:13px;text-align:center;max-width:240px">Bản đồ tương tác hiển thị mật độ journal theo quốc gia (tích hợp Mapbox / D3)</div>
+              <button class="btn btn-outline btn-sm">📍 Tích hợp Map</button>
+            </div>
+            <div class="chart-container">
+              <div class="chart-header"><div class="chart-title">Top 10 Countries by Journals</div></div>
+              <div style="height:300px"><canvas id="countryChart"></canvas></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Countries table -->
+        <div class="tab-panel" id="geo-country" style="padding-top:20px">
+          <div style="margin-bottom:16px">
+            <input type="text" class="form-input" style="width:280px" placeholder="🔍 Tìm quốc gia..."/>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <!-- List -->
+            <div class="card" style="padding:16px">
+              <div style="font-size:14px;font-weight:600;margin-bottom:12px">Danh sách quốc gia</div>
+              <div class="country-row" onclick="showRegions('US')">
+                <span style="font-size:20px">🇺🇸</span>
+                <div style="flex:1"><div style="font-size:14px;font-weight:500">United States</div><div style="font-size:12px;color:var(--color-text-muted)">142 regions</div></div>
+                <div style="text-align:right"><div style="font-size:16px;font-weight:700;color:var(--color-accent)">4,280</div><div style="font-size:11px;color:var(--color-text-muted)">journals</div></div>
+                <span style="color:var(--color-text-muted)">›</span>
+              </div>
+              <div class="country-row" onclick="showRegions('UK')">
+                <span style="font-size:20px">🇬🇧</span>
+                <div style="flex:1"><div style="font-size:14px;font-weight:500">United Kingdom</div><div style="font-size:12px;color:var(--color-text-muted)">28 regions</div></div>
+                <div style="text-align:right"><div style="font-size:16px;font-weight:700;color:var(--color-accent)">2,840</div><div style="font-size:11px;color:var(--color-text-muted)">journals</div></div>
+                <span style="color:var(--color-text-muted)">›</span>
+              </div>
+              <div class="country-row" onclick="showRegions('NL')">
+                <span style="font-size:20px">🇳🇱</span>
+                <div style="flex:1"><div style="font-size:14px;font-weight:500">Netherlands</div><div style="font-size:12px;color:var(--color-text-muted)">12 regions</div></div>
+                <div style="text-align:right"><div style="font-size:16px;font-weight:700;color:var(--color-accent)">1,920</div><div style="font-size:11px;color:var(--color-text-muted)">journals</div></div>
+                <span style="color:var(--color-text-muted)">›</span>
+              </div>
+              <div class="country-row" onclick="showRegions('DE')">
+                <span style="font-size:20px">🇩🇪</span>
+                <div style="flex:1"><div style="font-size:14px;font-weight:500">Germany</div><div style="font-size:12px;color:var(--color-text-muted)">16 regions</div></div>
+                <div style="text-align:right"><div style="font-size:16px;font-weight:700;color:var(--color-accent)">1,580</div><div style="font-size:11px;color:var(--color-text-muted)">journals</div></div>
+                <span style="color:var(--color-text-muted)">›</span>
+              </div>
+              <div class="country-row" onclick="showRegions('CN')">
+                <span style="font-size:20px">🇨🇳</span>
+                <div style="flex:1"><div style="font-size:14px;font-weight:500">China</div><div style="font-size:12px;color:var(--color-text-muted)">34 regions</div></div>
+                <div style="text-align:right"><div style="font-size:16px;font-weight:700;color:var(--color-accent)">1,240</div><div style="font-size:11px;color:var(--color-text-muted)">journals</div></div>
+                <span style="color:var(--color-text-muted)">›</span>
+              </div>
+            </div>
+            <!-- Region detail -->
+            <div class="card" style="padding:16px" id="region-panel">
+              <div style="font-size:14px;font-weight:600;margin-bottom:12px">🗺️ Chọn quốc gia để xem regions</div>
+              <div id="region-content">
+                <div class="empty-state" style="padding:40px 20px">
+                  <div class="empty-state-icon" style="font-size:40px">🌍</div>
+                  <div class="empty-state-desc">Click vào một quốc gia để xem thống kê các region/thành phố</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regions -->
+        <div class="tab-panel" id="geo-region" style="padding-top:20px">
+          <div class="chart-container">
+            <div class="chart-header"><div class="chart-title">Top Regions by Journals</div></div>
+            <div style="height:300px"><canvas id="regionChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/main.js"></script>
+<script>
+// Country chart
+const cc = document.getElementById('countryChart');
+if(cc) new Chart(cc,{type:'bar',data:{labels:['🇺🇸 US','🇬🇧 UK','🇳🇱 NL','🇩🇪 DE','🇨🇳 CN','🇫🇷 FR','🇨🇭 CH','🇯🇵 JP','🇦🇺 AU','🇨🇦 CA'],datasets:[{label:'Journals',data:[4280,2840,1920,1580,1240,1020,890,780,720,640],backgroundColor:'rgba(0,212,255,0.6)',borderColor:'#00d4ff',borderWidth:1,borderRadius:4}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#5a6278'}},y:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#9ba3b8',font:{size:11}}}}}});
+// Region chart
+const rc = document.getElementById('regionChart');
+if(rc) new Chart(rc,{type:'bar',data:{labels:['New York','London','Amsterdam','Berlin','Shanghai','Paris','Zurich','Tokyo','Sydney','Toronto'],datasets:[{label:'Journals',data:[1840,1420,960,780,620,510,440,390,360,320],backgroundColor:'rgba(99,102,241,0.6)',borderColor:'#6366f1',borderWidth:1,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#9ba3b8',font:{size:11}}},y:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#5a6278'}}}}});
+// Show regions
+const regionData = {
+  'US': [['New York','1,840 journals'],['California','1,220 journals'],['Massachusetts','680 journals']],
+  'UK': [['London','1,420 journals'],['Edinburgh','380 journals'],['Oxford','310 journals']],
+  'NL': [['Amsterdam','960 journals'],['Rotterdam','480 journals'],['Utrecht','280 journals']],
+  'DE': [['Berlin','780 journals'],['Munich','420 journals'],['Hamburg','260 journals']],
+  'CN': [['Shanghai','620 journals'],['Beijing','540 journals'],['Guangzhou','320 journals']]
+};
+function showRegions(code){
+  const d = regionData[code] || [];
+  const panel = document.querySelector('#region-content');
+  const flags = {US:'🇺🇸',UK:'🇬🇧',NL:'🇳🇱',DE:'🇩🇪',CN:'🇨🇳'};
+  panel.innerHTML = d.map(r=>`<div class="country-row"><span style="font-size:20px">${flags[code]}</span><div style="flex:1"><div style="font-size:14px;font-weight:500">${r[0]}</div></div><div style="font-size:14px;font-weight:700;color:var(--color-accent)">${r[1]}</div></div>`).join('');
+}
+</script>
+</body>
+</html>

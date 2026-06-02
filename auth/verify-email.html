@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Xác thực email — ResearchPulse</title>
+  <link rel="stylesheet" href="../assets/css/design-system.css"/>
+  <link rel="stylesheet" href="../assets/css/components.css"/>
+  <link rel="stylesheet" href="../assets/css/layouts.css"/>
+  <style>
+    body{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(0,212,255,.1) 0%,transparent 70%),var(--color-bg-primary);}
+    .otp-group{display:flex;gap:12px;justify-content:center;margin:32px 0;}
+    .otp-input{width:52px;height:60px;border-radius:10px;border:2px solid var(--border-color);background:var(--color-bg-input);color:var(--color-text-primary);font-size:24px;font-weight:700;text-align:center;outline:none;transition:all .2s;font-family:var(--font-family);}
+    .otp-input:focus{border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(0,212,255,.1);}
+  </style>
+</head>
+<body>
+<div style="max-width:480px;width:100%;text-align:center">
+  <a href="../index.html" class="nav-logo" style="display:inline-flex;margin-bottom:40px">
+    <div class="nav-logo-icon">🔬</div><span class="nav-logo-text">ResearchPulse</span>
+  </a>
+  <div class="card" style="padding:48px 40px">
+    <div style="font-size:60px;margin-bottom:20px">📬</div>
+    <h1 style="font-size:26px;font-weight:800;margin-bottom:10px">Xác thực email</h1>
+    <p style="color:var(--color-text-secondary);font-size:15px;line-height:1.7;margin-bottom:8px">Chúng tôi đã gửi mã xác thực 6 chữ số đến</p>
+    <p style="color:var(--color-accent);font-weight:600;font-size:16px">user@example.com</p>
+    <div class="otp-group">
+      <input type="text" class="otp-input" maxlength="1" id="otp-1"/>
+      <input type="text" class="otp-input" maxlength="1" id="otp-2"/>
+      <input type="text" class="otp-input" maxlength="1" id="otp-3"/>
+      <input type="text" class="otp-input" maxlength="1" id="otp-4"/>
+      <input type="text" class="otp-input" maxlength="1" id="otp-5"/>
+      <input type="text" class="otp-input" maxlength="1" id="otp-6"/>
+    </div>
+    <div class="alert alert-success" id="verify-success" style="display:none;margin-bottom:16px">
+      <span class="alert-icon">✅</span><span>Xác thực thành công! Đang chuyển hướng...</span>
+    </div>
+    <div class="alert alert-error" id="verify-error" style="display:none;margin-bottom:16px">
+      <span class="alert-icon">⚠️</span><span>Mã không đúng. Vui lòng thử lại.</span>
+    </div>
+    <button class="btn btn-primary" style="width:100%;padding:13px;margin-bottom:16px" onclick="verifyOTP()">Xác thực</button>
+    <p style="font-size:13px;color:var(--color-text-muted)">Không nhận được mã? <button onclick="resendCode()" style="background:none;border:none;color:var(--color-accent);cursor:pointer;font-size:13px;font-family:var(--font-family)" id="resend-btn">Gửi lại (<span id="countdown">60</span>s)</button></p>
+  </div>
+  <p style="margin-top:20px;font-size:13px;color:var(--color-text-muted)"><a href="login.html" style="color:var(--color-text-secondary)">← Quay lại đăng nhập</a></p>
+</div>
+<script src="../assets/js/main.js"></script>
+<script>
+// OTP auto-advance
+document.querySelectorAll('.otp-input').forEach((inp, i, all) => {
+  inp.addEventListener('input', () => { if(inp.value && i < all.length-1) all[i+1].focus(); });
+  inp.addEventListener('keydown', e => { if(e.key==='Backspace' && !inp.value && i > 0) all[i-1].focus(); });
+});
+function verifyOTP(){
+  const code = Array.from(document.querySelectorAll('.otp-input')).map(i=>i.value).join('');
+  if(code === '123456'){
+    document.querySelector('#verify-success').style.display='flex';
+    document.querySelector('#verify-error').style.display='none';
+    setTimeout(()=>window.location.href='../dashboard/index.html', 1500);
+  } else {
+    document.querySelector('#verify-error').style.display='flex';
+    document.querySelector('#verify-success').style.display='none';
+  }
+}
+let t = 60;
+const timer = setInterval(()=>{ t--; document.querySelector('#countdown').textContent=t; if(t<=0){clearInterval(timer);document.querySelector('#resend-btn').disabled=false;} }, 1000);
+function resendCode(){ alert('Đã gửi lại mã xác thực!'); }
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Manage Journals — Admin — ResearchPulse</title>
+  <link rel="stylesheet" href="../assets/css/design-system.css"/>
+  <link rel="stylesheet" href="../assets/css/components.css"/>
+  <link rel="stylesheet" href="../assets/css/layouts.css"/>
+  <style>.admin-sidebar{background:#0a0c10!important;border-right:1px solid rgba(255,255,255,0.04)!important;}</style>
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar admin-sidebar">
+    <div class="sidebar-header" style="background:#0a0c10;border-bottom:1px solid rgba(255,255,255,0.04)">
+      <div style="display:flex;align-items:center;gap:10px"><div class="nav-logo-icon">🔬</div><div><div class="nav-logo-text" style="font-size:14px">ResearchPulse</div><span class="admin-badge">ADMIN</span></div></div>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-section"><div class="sidebar-section-label">Admin</div>
+        <a href="dashboard.html" class="sidebar-item"><span class="sidebar-icon">📊</span> Dashboard</a>
+        <a href="journals.html" class="sidebar-item active" style="background:rgba(239,68,68,.12);color:#f87171"><span class="sidebar-icon">📰</span> Manage Journals</a>
+        <a href="articles.html" class="sidebar-item"><span class="sidebar-icon">📄</span> Manage Articles</a>
+        <a href="volumes.html" class="sidebar-item"><span class="sidebar-icon">📚</span> Manage Volumes</a>
+      </div>
+      <div class="sidebar-section"><div class="sidebar-section-label">Quay lại</div><a href="../dashboard/index.html" class="sidebar-item"><span class="sidebar-icon">🏠</span> User Dashboard</a></div>
+    </div>
+    <div class="sidebar-footer" style="background:#0a0c10"><div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--border-radius-md);background:rgba(255,255,255,0.05)"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#ef4444,#dc2626)">AD</div><div><div style="font-size:13px;font-weight:600">Admin User</div></div></div></div>
+  </aside>
+  <div class="main-content">
+    <header class="app-header" style="background:#0a0c10">
+      <div class="header-left">
+        <nav class="breadcrumb"><span class="breadcrumb-item"><a href="dashboard.html">Admin</a></span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Journals</span></nav>
+      </div>
+      <div class="header-right">
+        <span class="badge badge-error" style="background:var(--color-error-bg);color:var(--color-error)">⚠️ Admin Mode</span>
+        <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#ef4444,#dc2626)">AD</div>
+      </div>
+    </header>
+    <div class="page-content">
+      <div class="page-header" style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><h1 class="page-title">Manage Journals</h1><p class="page-desc">Thêm, sửa, xóa và khôi phục journals</p></div>
+        <button class="btn btn-primary" data-modal-open="#journal-form-modal">+ Thêm Journal</button>
+      </div>
+      <!-- Filters -->
+      <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap">
+        <input type="text" class="form-input" style="width:280px" placeholder="🔍 Tìm journal..."/>
+        <select class="form-select" style="width:auto"><option>Tất cả</option><option>Active</option><option>Deleted</option></select>
+        <select class="form-select" style="width:auto"><option>Tất cả quartile</option><option>Q1</option><option>Q2</option></select>
+        <button class="btn btn-secondary btn-sm">⬇ Export CSV</button>
+      </div>
+      <!-- Table -->
+      <div class="table-wrapper">
+        <table class="table-sortable">
+          <thead><tr><th>ID</th><th>Tên Journal ↕</th><th>ISSN</th><th>Publisher</th><th>Quartile</th><th>IF</th><th>Status</th><th>Thao tác</th></tr></thead>
+          <tbody>
+            <tr>
+              <td style="color:var(--color-text-muted);font-family:var(--font-mono);font-size:12px">#001</td>
+              <td><div style="font-weight:500;color:var(--color-text-primary)">Nature Machine Intelligence</div><div style="font-size:11px;color:var(--color-text-muted)">ISSN: 2522-5839</div></td>
+              <td style="font-family:var(--font-mono);font-size:12px">2522-5839</td>
+              <td>Springer Nature</td>
+              <td><span class="badge badge-accent">Q1</span></td>
+              <td style="font-weight:700;color:var(--color-accent)">23.8</td>
+              <td><span class="badge badge-success">Active</span></td>
+              <td>
+                <div style="display:flex;gap:6px">
+                  <button class="btn btn-ghost btn-sm" data-modal-open="#journal-form-modal" title="Sửa">✏️</button>
+                  <button class="btn btn-ghost btn-sm" data-modal-open="#delete-confirm-modal" title="Xóa" style="color:var(--color-error)">🗑️</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="color:var(--color-text-muted);font-family:var(--font-mono);font-size:12px">#002</td>
+              <td><div style="font-weight:500;color:var(--color-text-primary)">IEEE TNNLS</div><div style="font-size:11px;color:var(--color-text-muted)">ISSN: 2162-237X</div></td>
+              <td style="font-family:var(--font-mono);font-size:12px">2162-237X</td>
+              <td>IEEE</td>
+              <td><span class="badge badge-accent">Q1</span></td>
+              <td style="font-weight:700;color:var(--color-accent)">14.2</td>
+              <td><span class="badge badge-success">Active</span></td>
+              <td><div style="display:flex;gap:6px"><button class="btn btn-ghost btn-sm" data-modal-open="#journal-form-modal">✏️</button><button class="btn btn-ghost btn-sm" style="color:var(--color-error)" data-modal-open="#delete-confirm-modal">🗑️</button></div></td>
+            </tr>
+            <tr style="opacity:.6">
+              <td style="color:var(--color-text-muted);font-family:var(--font-mono);font-size:12px">#003</td>
+              <td><div style="font-weight:500;text-decoration:line-through;color:var(--color-text-muted)">Old Journal 2019</div></td>
+              <td style="font-family:var(--font-mono);font-size:12px">—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td><span class="badge badge-error">Deleted</span></td>
+              <td><button class="btn btn-ghost btn-sm" style="color:var(--color-success)" data-modal-open="#restore-confirm-modal">♻️ Khôi phục</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:20px">
+        <div class="pagination"><button class="page-btn disabled">‹</button><button class="page-btn active">1</button><button class="page-btn">2</button><button class="page-btn">3</button><span style="color:var(--color-text-muted);padding:0 4px">...</span><button class="page-btn">250</button><button class="page-btn">›</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add/Edit Journal Modal -->
+<div class="modal-overlay" id="journal-form-modal" style="display:none">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <div class="modal-title">📰 Thêm / Sửa Journal</div>
+      <button class="modal-close" data-modal-close="#journal-form-modal">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div class="form-group"><label class="form-label required">Tên Journal</label><input type="text" class="form-input" value="Nature Machine Intelligence"/></div>
+        <div class="form-group"><label class="form-label required">Publisher</label><input type="text" class="form-input" value="Springer Nature"/></div>
+        <div class="form-group"><label class="form-label required">ISSN</label><input type="text" class="form-input" value="2522-5839"/></div>
+        <div class="form-group"><label class="form-label">E-ISSN</label><input type="text" class="form-input" placeholder="1234-5678"/></div>
+        <div class="form-group"><label class="form-label">Country</label><input type="text" class="form-input" value="United Kingdom"/></div>
+        <div class="form-group"><label class="form-label">Impact Factor</label><input type="number" class="form-input" value="23.8" step="0.1"/></div>
+        <div class="form-group"><label class="form-label">Quartile</label><select class="form-select"><option selected>Q1</option><option>Q2</option><option>Q3</option><option>Q4</option></select></div>
+        <div class="form-group"><label class="form-label">Open Access</label><select class="form-select"><option>Có</option><option>Không</option></select></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" data-modal-close="#journal-form-modal">Hủy</button>
+      <button class="btn btn-primary" onclick="document.querySelector('#journal-form-modal').style.display='none';document.body.style.overflow=''">💾 Lưu Journal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Delete confirm -->
+<div class="modal-overlay" id="delete-confirm-modal" style="display:none">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title">🗑️ Xóa Journal?</div><button class="modal-close" data-modal-close="#delete-confirm-modal">✕</button></div>
+    <div class="modal-body">
+      <div class="alert alert-warning" style="margin-bottom:12px"><span class="alert-icon">⚠️</span><span>Journal sẽ bị xóa mềm (soft delete) và có thể khôi phục sau.</span></div>
+      <p>Xóa <strong>"Nature Machine Intelligence"</strong>?</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" data-modal-close="#delete-confirm-modal">Hủy</button>
+      <button class="btn btn-danger" onclick="document.querySelector('#delete-confirm-modal').style.display='none';document.body.style.overflow=''">Xóa mềm</button>
+    </div>
+  </div>
+</div>
+
+<!-- Restore confirm -->
+<div class="modal-overlay" id="restore-confirm-modal" style="display:none">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title">♻️ Khôi phục Journal?</div><button class="modal-close" data-modal-close="#restore-confirm-modal">✕</button></div>
+    <div class="modal-body"><p>Khôi phục <strong>"Old Journal 2019"</strong>? Journal sẽ được đưa về trạng thái Active.</p></div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" data-modal-close="#restore-confirm-modal">Hủy</button>
+      <button class="btn btn-primary" style="background:var(--color-success)" onclick="document.querySelector('#restore-confirm-modal').style.display='none';document.body.style.overflow=''">♻️ Khôi phục</button>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
