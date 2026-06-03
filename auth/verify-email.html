@@ -54,7 +54,7 @@ function verifyOTP(){
   if(code === '123456'){
     document.querySelector('#verify-success').style.display='flex';
     document.querySelector('#verify-error').style.display='none';
-    setTimeout(()=>window.location.href='../dashboard/index.html', 1500);
+    setTimeout(()=>window.location.href='verify-success.html?email=user@example.com', 1500);
   } else {
     document.querySelector('#verify-error').style.display='flex';
     document.querySelector('#verify-success').style.display='none';

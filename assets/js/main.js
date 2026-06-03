@@ -234,7 +234,19 @@ const LOCALIZATION_DICTIONARY = {
     "Chào mừng bạn đến với ResearchPulse! 👋": "Chào mừng bạn đến với ResearchPulse! 👋",
     "Khám phá xu hướng, tạp chí và các bài báo khoa học mới nhất.": "Khám phá xu hướng, tạp chí và các bài báo khoa học mới nhất.",
     "Chào buổi sáng, John! 👋": "Chào buổi sáng, John! 👋",
-    "Hôm nay có gì mới trong lĩnh vực nghiên cứu của bạn?": "Hôm nay có gì mới trong lĩnh vực nghiên cứu của bạn?"
+    "Hôm nay có gì mới trong lĩnh vực nghiên cứu của bạn?": "Hôm nay có gì mới trong lĩnh vực nghiên cứu của bạn?",
+    
+    // Verify Success Page
+    "Kích hoạt tài khoản thành công": "Kích hoạt tài khoản thành công",
+    "Tài khoản của bạn đã được kích hoạt thành công trên hệ thống ResearchPulse. Bây giờ bạn có thể truy cập đầy đủ các tính năng.": "Tài khoản của bạn đã được kích hoạt thành công trên hệ thống ResearchPulse. Bây giờ bạn có thể truy cập đầy đủ các tính năng.",
+    "Trạng thái:": "Trạng thái:",
+    "Hoạt động": "Hoạt động",
+    "Tự động chuyển hướng sau": "Tự động chuyển hướng sau",
+    "giây...": "giây...",
+    "Đi đến Dashboard": "Đi đến Dashboard",
+    "Về trang chủ": "Về trang chủ",
+    "Hỗ trợ kỹ thuật?": "Hỗ trợ kỹ thuật?",
+    "Liên hệ chúng tôi": "Liên hệ chúng tôi"
   },
   en: {
     // Navigation / General
@@ -339,7 +351,19 @@ const LOCALIZATION_DICTIONARY = {
     "Chào mừng bạn đến với ResearchPulse! 👋": "Welcome to ResearchPulse! 👋",
     "Khám phá xu hướng, tạp chí và các bài báo khoa học mới nhất.": "Discover trends, journals, and the latest scientific publications.",
     "Chào buổi sáng, John! 👋": "Good morning, John! 👋",
-    "Hôm nay có gì mới trong lĩnh vực nghiên cứu của bạn?": "What's new in your research field today?"
+    "Hôm nay có gì mới trong lĩnh vực nghiên cứu của bạn?": "What's new in your research field today?",
+    
+    // Verify Success Page
+    "Kích hoạt tài khoản thành công": "Account Activated Successfully",
+    "Tài khoản của bạn đã được kích hoạt thành công trên hệ thống ResearchPulse. Bây giờ bạn có thể truy cập đầy đủ các tính năng.": "Your account has been successfully activated on ResearchPulse. You can now access all features.",
+    "Trạng thái:": "Status:",
+    "Hoạt động": "Active",
+    "Tự động chuyển hướng sau": "Automatically redirecting in",
+    "giây...": "seconds...",
+    "Đi đến Dashboard": "Go to Dashboard",
+    "Về trang chủ": "Back to Homepage",
+    "Hỗ trợ kỹ thuật?": "Technical support?",
+    "Liên hệ chúng tôi": "Contact us"
   }
 };
 
