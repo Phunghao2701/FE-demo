@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .txt-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #f8fafc; }
+    .txt-body { font-family: system-ui, -apple-system, sans-serif; font-weight: 400; fill: #94a3b8; }
+    .txt-accent { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #00d4ff; }
+    .btn-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 12px; fill: #ffffff; text-anchor: middle; }
+    .nav-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 14px; fill: #94a3b8; }
+    .nav-text.active { fill: #f8fafc; font-weight: 600; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bg-grad)" />
+
+  <!-- APP NAVBAR (Horizontal top navbar) -->
+  <rect width="1200" height="64" fill="#0b0f19" />
+  <line x1="0" y1="64" x2="1200" y2="64" stroke="#1e293b" stroke-width="1" />
+  <text x="50" y="38" class="txt-title" font-size="20" letter-spacing="-0.5">🔬 <tspan fill="#00d4ff">Research</tspan>Pulse</text>
+  
+  <!-- Horizontal App Nav Items -->
+  <text x="250" y="37" class="nav-text active">🏠 Dashboard</text>
+  <line x1="245" y1="63" x2="340" y2="63" stroke="#00d4ff" stroke-width="2" />
+  
+  <text x="370" y="37" class="nav-text">🔍 Tìm kiếm</text>
+  <text x="480" y="37" class="nav-text">🌏 Bản đồ địa lý</text>
+  <text x="610" y="37" class="nav-text">🏆 Tác giả</text>
+  <text x="700" y="37" class="nav-text">📁 Projects</text>
+  
+  <!-- Right Navbar Profile & Lang -->
+  <rect x="940" y="16" width="60" height="32" rx="6" fill="#1e293b" />
+  <text x="970" y="36" font-family="sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">🌐 VI</text>
+  
+  <!-- User Profile indicator -->
+  <circle cx="1040" cy="32" r="16" fill="url(#accent-grad)" />
+  <text x="1040" y="36" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">JD</text>
+  <text x="1065" y="37" class="txt-title" font-size="13">John Doe ▾</text>
+
+  <!-- CONTENT CONTAINER -->
+  <!-- Welcome Banner -->
+  <text x="50" y="110" class="txt-title" font-size="26">Chào mừng bạn đến với ResearchPulse! 👋</text>
+  <text x="50" y="135" class="txt-body" font-size="14">Khám phá xu hướng, tạp chí và các bài báo khoa học mới nhất.</text>
+
+  <!-- STATS GRID -->
+  <!-- Stat Card 1 -->
+  <rect x="50" y="165" width="250" height="90" rx="10" fill="url(#card-grad)" stroke="#1e293b" />
+  <text x="75" y="200" font-size="24">📁</text>
+  <text x="120" y="200" class="txt-title" font-size="28">3</text>
+  <text x="120" y="225" class="txt-body" font-size="12">Projects đang theo dõi</text>
+  <text x="240" y="195" font-family="sans-serif" font-size="11" fill="#10b981" text-anchor="end">▲ +1 tuần này</text>
+
+  <!-- Stat Card 2 -->
+  <rect x="330" y="165" width="250" height="90" rx="10" fill="url(#card-grad)" stroke="#1e293b" />
+  <text x="355" y="200" font-size="24">🔑</text>
+  <text x="400" y="200" class="txt-title" font-size="28">24</text>
+  <text x="400" y="225" class="txt-body" font-size="12">Keywords đang watch</text>
+  <text x="520" y="195" font-family="sans-serif" font-size="11" fill="#10b981" text-anchor="end">▲ +5 tuần này</text>
+
+  <!-- Stat Card 3 -->
+  <rect x="610" y="165" width="250" height="90" rx="10" fill="url(#card-grad)" stroke="#1e293b" />
+  <text x="635" y="200" font-size="24">📄</text>
+  <text x="680" y="200" class="txt-title" font-size="28">1.2K</text>
+  <text x="680" y="225" class="txt-body" font-size="12">Bài báo trong projects</text>
+  <text x="800" y="195" font-family="sans-serif" font-size="11" fill="#10b981" text-anchor="end">▲ +62 tháng này</text>
+
+  <!-- Stat Card 4 -->
+  <rect x="890" y="165" width="260" height="90" rx="10" fill="url(#card-grad)" stroke="#1e293b" />
+  <text x="915" y="200" font-size="24">📰</text>
+  <text x="960" y="200" class="txt-title" font-size="28">18</text>
+  <text x="960" y="225" class="txt-body" font-size="12">Journals theo dõi</text>
+  <text x="1080" y="195" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="end">— Không đổi</text>
+
+  <!-- TREND CHART & SIDEBAR GRID -->
+  <!-- Chart Card -->
+  <rect x="50" y="280" width="750" height="300" rx="12" fill="#111827" stroke="#1e293b" />
+  <text x="80" y="315" class="txt-title" font-size="16">Xu hướng publication</text>
+  <text x="80" y="335" class="txt-body" font-size="12">Số bài báo theo năm trong các projects của bạn</text>
+  
+  <rect x="680" y="295" width="90" height="28" rx="4" fill="#1e293b" />
+  <text x="725" y="313" class="txt-body" font-size="11" fill="#e2e8f0" text-anchor="middle">2019-2024</text>
+  
+  <!-- Line Chart Drawing -->
+  <g stroke="#1e293b" stroke-width="1" stroke-dasharray="4">
+    <line x1="120" y1="380" x2="750" y2="380" />
+    <line x1="120" y1="440" x2="750" y2="440" />
+    <line x1="120" y1="500" x2="750" y2="500" />
+  </g>
+  <g stroke="#334155" stroke-width="1">
+    <line x1="120" y1="540" x2="750" y2="540" />
+  </g>
+  <!-- Chart Labels -->
+  <text x="90" y="384" class="txt-body" font-size="11" text-anchor="end">400</text>
+  <text x="90" y="444" class="txt-body" font-size="11" text-anchor="end">200</text>
+  <text x="90" y="504" class="txt-body" font-size="11" text-anchor="end">0</text>
+  
+  <text x="140" y="560" class="txt-body" font-size="11" text-anchor="middle">2019</text>
+  <text x="240" y="560" class="txt-body" font-size="11" text-anchor="middle">2020</text>
+  <text x="340" y="560" class="txt-body" font-size="11" text-anchor="middle">2021</text>
+  <text x="440" y="560" class="txt-body" font-size="11" text-anchor="middle">2022</text>
+  <text x="540" y="560" class="txt-body" font-size="11" text-anchor="middle">2023</text>
+  <text x="640" y="560" class="txt-body" font-size="11" text-anchor="middle">2024</text>
+  
+  <!-- Colored Chart Paths -->
+  <!-- Dataset 1 AI (Teal) -->
+  <path d="M 140,510 L 240,470 L 340,420 L 440,360 L 540,310 L 640,290" fill="none" stroke="#00d4ff" stroke-width="3" />
+  <circle cx="640" cy="290" r="5" fill="#00d4ff" />
+  
+  <!-- Dataset 2 Bioinformatics (Purple) -->
+  <path d="M 140,530 L 240,510 L 340,490 L 440,450 L 540,390 L 640,360" fill="none" stroke="#8b5cf6" stroke-width="3" />
+  <circle cx="640" cy="360" r="5" fill="#8b5cf6" />
+  
+  <!-- Dataset 3 Climate (Amber) -->
+  <path d="M 140,490 L 240,460 L 340,440 L 440,410 L 540,370 L 640,340" fill="none" stroke="#f59e0b" stroke-width="3" />
+  <circle cx="640" cy="340" r="5" fill="#f59e0b" />
+
+  <!-- Sidebar: Recent Projects -->
+  <rect x="830" y="280" width="320" height="300" rx="12" fill="#111827" stroke="#1e293b" />
+  <text x="860" y="315" class="txt-title" font-size="16">Projects gần đây</text>
+  <text x="1110" y="315" class="txt-body" font-size="12" fill="#00d4ff" text-anchor="end">Xem tất cả →</text>
+  
+  <!-- Project Item 1 -->
+  <rect x="860" y="340" width="40" height="40" rx="8" fill="url(#accent-grad)" />
+  <text x="880" y="366" font-size="20" text-anchor="middle">🤖</text>
+  <text x="915" y="358" class="txt-title" font-size="14">AI &amp; Machine Learning</text>
+  <text x="915" y="375" class="txt-body" font-size="12">8 journals · 542 bài báo</text>
+  <rect x="1080" y="350" width="45" height="20" rx="4" fill="#065f46" />
+  <text x="1102" y="364" font-family="sans-serif" font-size="10" fill="#34d399" font-weight="bold" text-anchor="middle">Active</text>
+  
+  <!-- Project Item 2 -->
+  <rect x="860" y="400" width="40" height="40" rx="8" fill="#6366f1" />
+  <text x="880" y="426" font-size="20" text-anchor="middle">🧬</text>
+  <text x="915" y="418" class="txt-title" font-size="14">Bioinformatics 2024</text>
+  <text x="915" y="435" class="txt-body" font-size="12">5 journals · 321 bài báo</text>
+  <rect x="1080" y="410" width="45" height="20" rx="4" fill="#1e3a8a" />
+  <text x="1102" y="424" font-family="sans-serif" font-size="10" fill="#60a5fa" font-weight="bold" text-anchor="middle">New</text>
+
+  <!-- Project Item 3 -->
+  <rect x="860" y="460" width="40" height="40" rx="8" fill="#f59e0b" />
+  <text x="880" y="486" font-size="20" text-anchor="middle">🌱</text>
+  <text x="915" y="478" class="txt-title" font-size="14">Climate Science</text>
+  <text x="915" y="495" class="txt-body" font-size="12">3 journals · 421 bài báo</text>
+
+  <!-- BOTTOM GRID -->
+  <!-- Trending Keywords -->
+  <rect x="50" y="600" width="520" height="150" rx="12" fill="#111827" stroke="#1e293b" />
+  <text x="80" y="635" class="txt-title" font-size="16">🔥 Trending Keywords</text>
+  <text x="540" y="635" class="txt-body" font-size="12" fill="#00d4ff" text-anchor="end">Xem thêm →</text>
+  
+  <rect x="80" y="655" width="160" height="28" rx="14" fill="#1e293b" stroke="#334155" />
+  <text x="160" y="673" font-family="sans-serif" font-size="12" fill="#f8fafc" text-anchor="middle">Large Language Model <tspan fill="#10b981">+2.4k</tspan></text>
+  
+  <rect x="250" y="655" width="90" height="28" rx="14" fill="#1e293b" stroke="#334155" />
+  <text x="295" y="673" font-family="sans-serif" font-size="12" fill="#f8fafc" text-anchor="middle">RAG <tspan fill="#10b981">+1.8k</tspan></text>
+
+  <rect x="350" y="655" width="100" height="28" rx="14" fill="#1e293b" stroke="#334155" />
+  <text x="400" y="673" font-family="sans-serif" font-size="12" fill="#f8fafc" text-anchor="middle">Diffusion <tspan fill="#10b981">+1.2k</tspan></text>
+
+  <rect x="80" y="695" width="110" height="28" rx="14" fill="#1e293b" stroke="#334155" />
+  <text x="135" y="713" font-family="sans-serif" font-size="12" fill="#f8fafc" text-anchor="middle">Multimodal <tspan fill="#10b981">+980</tspan></text>
+
+  <rect x="200" y="695" width="150" height="28" rx="14" fill="#1e293b" stroke="#00d4ff" />
+  <text x="275" y="713" font-family="sans-serif" font-size="12" fill="#00d4ff" text-anchor="middle">Fine-tuning ★</text>
+
+  <!-- Quick Access Links -->
+  <rect x="600" y="600" width="550" height="150" rx="12" fill="#111827" stroke="#1e293b" />
+  <text x="630" y="635" class="txt-title" font-size="16">⚡ Truy cập nhanh</text>
+  
+  <rect x="630" y="660" width="110" height="64" rx="8" fill="#1e293b" stroke="#334155" />
+  <text x="685" y="685" font-size="20" text-anchor="middle">🔍</text>
+  <text x="685" y="708" class="txt-title" font-size="11" text-anchor="middle">Tìm kiếm</text>
+
+  <rect x="760" y="660" width="110" height="64" rx="8" fill="#1e293b" stroke="#334155" />
+  <text x="815" y="685" font-size="20" text-anchor="middle">📰</text>
+  <text x="815" y="708" class="txt-title" font-size="11" text-anchor="middle">Journals</text>
+
+  <rect x="890" y="660" width="110" height="64" rx="8" fill="#1e293b" stroke="#334155" />
+  <text x="945" y="685" font-size="20" text-anchor="middle">🌏</text>
+  <text x="945" y="708" class="txt-title" font-size="11" text-anchor="middle">Bản đồ địa lý</text>
+
+  <rect x="1020" y="660" width="110" height="64" rx="8" fill="#1e293b" stroke="#334155" />
+  <text x="1075" y="685" font-size="20" text-anchor="middle">🏆</text>
+  <text x="1075" y="708" class="txt-title" font-size="11" text-anchor="middle">Leaderboard</text>
+</svg>

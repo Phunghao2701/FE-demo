@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .txt-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #f8fafc; }
+    .txt-body { font-family: system-ui, -apple-system, sans-serif; font-weight: 400; fill: #94a3b8; }
+    .txt-accent { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #00d4ff; }
+    .btn-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 12px; fill: #ffffff; text-anchor: middle; }
+    .nav-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 14px; fill: #94a3b8; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bg-grad)" />
+
+  <!-- APP NAVBAR -->
+  <rect width="1200" height="64" fill="#0b0f19" />
+  <line x1="0" y1="64" x2="1200" y2="64" stroke="#1e293b" stroke-width="1" />
+  <text x="50" y="38" class="txt-title" font-size="20" letter-spacing="-0.5">🔬 <tspan fill="#00d4ff">Research</tspan>Pulse</text>
+  
+  <text x="250" y="37" class="nav-text">🏠 Dashboard</text>
+  <text x="370" y="37" class="nav-text active" fill="#f8fafc" font-weight="600">🔍 Tìm kiếm</text>
+  <line x1="365" y1="63" x2="450" y2="63" stroke="#00d4ff" stroke-width="2" />
+  <text x="480" y="37" class="nav-text">🌏 Bản đồ địa lý</text>
+  <text x="610" y="37" class="nav-text">🏆 Tác giả</text>
+  <text x="700" y="37" class="nav-text">📁 Projects</text>
+  
+  <rect x="940" y="16" width="60" height="32" rx="6" fill="#1e293b" />
+  <text x="970" y="36" font-family="sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">🌐 VI</text>
+  <circle cx="1040" cy="32" r="16" fill="url(#accent-grad)" />
+  <text x="1040" y="36" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">JD</text>
+  <text x="1065" y="37" class="txt-title" font-size="13">John Doe ▾</text>
+
+  <!-- CONTENT -->
+  <text x="50" y="115" class="txt-title" font-size="22">Tra cứu &amp; Tìm kiếm danh mục</text>
+  <text x="50" y="138" class="txt-body" font-size="14">Duyệt qua các tạp chí khoa học uy tín, phân loại theo Scimago, Scopus, WoS.</text>
+
+  <!-- Main layout grid: Left filter (300px), Right results (800px) -->
+  
+  <!-- LEFT SIDEBAR: FILTERS -->
+  <rect x="50" y="170" width="280" height="570" rx="10" fill="#111827" stroke="#1e293b" />
+  <text x="80" y="205" class="txt-title" font-size="15">Bộ lọc nâng cao</text>
+  
+  <!-- Filter 1: Subject Area -->
+  <text x="80" y="240" class="txt-title" font-size="13" fill="#cbd5e1">Lĩnh vực (Subject Area)</text>
+  <rect x="80" y="250" width="220" height="32" rx="6" fill="#1e293b" stroke="#334155" />
+  <text x="95" y="271" class="txt-body" font-size="12">Tất cả lĩnh vực ▾</text>
+
+  <!-- Filter 2: Ranking tier -->
+  <text x="80" y="315" class="txt-title" font-size="13" fill="#cbd5e1">Bậc xếp hạng</text>
+  
+  <rect x="80" y="330" width="45" height="24" rx="4" fill="#065f46" />
+  <text x="102" y="346" font-family="sans-serif" font-size="11" fill="#34d399" font-weight="bold" text-anchor="middle">Q1</text>
+
+  <rect x="135" y="330" width="45" height="24" rx="4" fill="#78350f" />
+  <text x="157" y="346" font-family="sans-serif" font-size="11" fill="#fbbf24" font-weight="bold" text-anchor="middle">Q2</text>
+
+  <rect x="190" y="330" width="45" height="24" rx="4" fill="#1e293b" stroke="#334155" />
+  <text x="212" y="346" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Q3</text>
+
+  <rect x="245" y="330" width="45" height="24" rx="4" fill="#1e293b" stroke="#334155" />
+  <text x="267" y="346" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Q4</text>
+
+  <!-- Filter 3: H-index slider mockup -->
+  <text x="80" y="395" class="txt-title" font-size="13" fill="#cbd5e1">H-Index tối thiểu</text>
+  <line x1="80" y1="415" x2="280" y2="415" stroke="#334155" stroke-width="4" stroke-linecap="round" />
+  <line x1="80" y1="415" x2="180" y2="415" stroke="#00d4ff" stroke-width="4" stroke-linecap="round" />
+  <circle cx="180" cy="415" r="8" fill="#00d4ff" stroke="#ffffff" stroke-width="2" />
+  <text x="180" y="440" class="txt-title" font-size="12" fill="#00d4ff" text-anchor="middle">50+</text>
+
+  <!-- Filter 4: Publisher Checkboxes -->
+  <text x="80" y="485" class="txt-title" font-size="13" fill="#cbd5e1">Nhà xuất bản</text>
+  
+  <rect x="80" y="505" width="14" height="14" rx="3" fill="#00d4ff" />
+  <path d="M 83,512 L 86,515 L 91,508" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <text x="105" y="517" class="txt-body" font-size="12" fill="#cbd5e1">Elsevier</text>
+
+  <rect x="80" y="535" width="14" height="14" rx="3" fill="#1e293b" stroke="#334155" />
+  <text x="105" y="547" class="txt-body" font-size="12" fill="#cbd5e1">Springer Nature</text>
+
+  <rect x="80" y="565" width="14" height="14" rx="3" fill="#1e293b" stroke="#334155" />
+  <text x="105" y="577" class="txt-body" font-size="12" fill="#cbd5e1">IEEE</text>
+
+  <!-- Clear buttons -->
+  <rect x="80" y="680" width="220" height="36" rx="6" fill="#1e293b" stroke="#334155" />
+  <text x="190" y="702" class="btn-text" fill="#cbd5e1">Áp dụng bộ lọc</text>
+
+  <!-- RIGHT RESULTS AREA -->
+  <!-- Search Input & Sort -->
+  <rect x="360" y="170" width="580" height="40" rx="6" fill="#111827" stroke="#1e293b" />
+  <text x="380" y="195" class="txt-body" font-size="13">Tìm kiếm tạp chí (ví dụ: 'computer vision', 'nature')...</text>
+  
+  <rect x="960" y="170" width="190" height="40" rx="6" fill="#111827" stroke="#1e293b" />
+  <text x="980" y="195" class="txt-body" font-size="13">Sắp xếp: H-Index ▾</text>
+
+  <!-- Grid of Journal Cards (2 columns, 3 rows) -->
+  <!-- Card 1 -->
+  <rect x="360" y="235" width="380" height="140" rx="10" fill="url(#card-grad)" stroke="#1e293b" />
+  <rect x="380" y="255" width="30" height="18" rx="3" fill="#065f46" />
+  <text x="395" y="268" font-family="sans-serif" font-size="9" fill="#34d399" font-weight="bold" text-anchor="middle">Q1</text>
+  <text x="420" y="268" class="txt-body" font-size="11" fill="#64748b">Computer Vision</text>
+  <text x="380" y="295" class="txt-title" font-size="15">IEEE Trans. on Pattern Analysis...</text>
+  <text x="380" y="320" class="txt-body" font-size="12">IF: <tspan fill="#f8fafc">24.8</tspan>  ·  H-Index: <tspan fill="#f8fafc">320</tspan>  ·  Publisher: IEEE</text>
+  <rect x="640" y="335" width="85" height="28" rx="6" fill="#1e293b" stroke="#00d4ff" />
+  <text x="682" y="353" class="btn-text" fill="#00d4ff">+ Theo dõi</text>
+
+  <!-- Card 2 -->
+  <rect x="770" y="235" width="380" height="140" rx="10" fill="url(#card-grad)" stroke="#1e293b" />
+  <rect x="790" y="255" width="30" height="18" rx="3" fill="#065f46" />
+  <text x="805" y="268" font-family="sans-serif" font-size="9" fill="#34d399" font-weight="bold" text-anchor="middle">Q1</text>
+  <text x="830" y="268" class="txt-body" font-size="11" fill="#64748b">AI &amp; ML</text>
+  <text x="790" y="295" class="txt-title" font-size="15">Nature Machine Intelligence</text>
+  <text x="790" y="320" class="txt-body" font-size="12">IF: <tspan fill="#f8fafc">25.8</tspan>  ·  H-Index: <tspan fill="#f8fafc">112</tspan>  ·  Publisher: Nature</text>
+  <rect x="1050" y="335" width="85" height="28" rx="6" fill="#1e293b" stroke="#00d4ff" />
+  <text x="1092" y="353" class="btn-text" fill="#00d4ff">+ Theo dõi</text>
+
+  <!-- Card 3 -->
+  <rect x="360" y="395" width="380" height="140" rx="10" fill="url(#card-grad)" stroke="#1e293b" />
+  <rect x="380" y="415" width="30" height="18" rx="3" fill="#065f46" />
+  <text x="395" y="428" font-family="sans-serif" font-size="9" fill="#34d399" font-weight="bold" text-anchor="middle">Q1</text>
+  <text x="420" y="428" class="txt-body" font-size="11" fill="#64748b">Bioinformatics</text>
+  <text x="380" y="455" class="txt-title" font-size="15">Bioinformatics</text>
+  <text x="380" y="480" class="txt-body" font-size="12">IF: <tspan fill="#f8fafc">5.8</tspan>  ·  H-Index: <tspan fill="#f8fafc">248</tspan>  ·  Publisher: Oxford</text>
+  <rect x="640" y="495" width="85" height="28" rx="6" fill="#1e293b" stroke="#00d4ff" />
+  <text x="682" y="513" class="btn-text" fill="#00d4ff">+ Theo dõi</text>
+
+  <!-- Card 4 -->
+  <rect x="770" y="395" width="380" height="140" rx="10" fill="url(#card-grad)" stroke="#1e293b" />
+  <rect x="790" y="415" width="30" height="18" rx="3" fill="#065f46" />
+  <text x="805" y="428" font-family="sans-serif" font-size="9" fill="#34d399" font-weight="bold" text-anchor="middle">Q1</text>
+  <text x="830" y="428" class="txt-body" font-size="11" fill="#64748b">Computer Science</text>
+  <text x="790" y="455" class="txt-title" font-size="15">Journal of Machine Learning Res.</text>
+  <text x="790" y="480" class="txt-body" font-size="12">IF: <tspan fill="#f8fafc">6.0</tspan>  ·  H-Index: <tspan fill="#f8fafc">180</tspan>  ·  Publisher: JMLR</text>
+  <rect x="1050" y="495" width="85" height="28" rx="6" fill="#00d4ff" />
+  <text x="1092" y="513" class="btn-text">✓ Đang theo dõi</text>
+
+  <!-- Card 5 -->
+  <rect x="360" y="555" width="380" height="140" rx="10" fill="url(#card-grad)" stroke="#1e293b" />
+  <rect x="380" y="575" width="30" height="18" rx="3" fill="#78350f" />
+  <text x="395" y="588" font-family="sans-serif" font-size="9" fill="#fbbf24" font-weight="bold" text-anchor="middle">Q2</text>
+  <text x="420" y="588" class="txt-body" font-size="11" fill="#64748b">Cheminformatics</text>
+  <text x="380" y="615" class="txt-title" font-size="15">Journal of Cheminformatics</text>
+  <text x="380" y="640" class="txt-body" font-size="12">IF: <tspan fill="#f8fafc">4.2</tspan>  ·  H-Index: <tspan fill="#f8fafc">80</tspan>  ·  Publisher: BMC</text>
+  <rect x="640" y="655" width="85" height="28" rx="6" fill="#1e293b" stroke="#00d4ff" />
+  <text x="682" y="673" class="btn-text" fill="#00d4ff">+ Theo dõi</text>
+
+  <!-- Card 6 -->
+  <rect x="770" y="555" width="380" height="140" rx="10" fill="url(#card-grad)" stroke="#1e293b" />
+  <rect x="790" y="575" width="30" height="18" rx="3" fill="#065f46" />
+  <text x="805" y="588" font-family="sans-serif" font-size="9" fill="#34d399" font-weight="bold" text-anchor="middle">Q1</text>
+  <text x="830" y="588" class="txt-body" font-size="11" fill="#64748b">Neuroscience</text>
+  <text x="790" y="615" class="txt-title" font-size="15">Frontiers in Human Neuroscience</text>
+  <text x="790" y="640" class="txt-body" font-size="12">IF: <tspan fill="#f8fafc">3.6</tspan>  ·  H-Index: <tspan fill="#f8fafc">115</tspan>  ·  Publisher: Frontiers</text>
+  <rect x="1050" y="655" width="85" height="28" rx="6" fill="#1e293b" stroke="#00d4ff" />
+  <text x="1092" y="673" class="btn-text" fill="#00d4ff">+ Theo dõi</text>
+
+  <!-- Pagination -->
+  <rect x="660" y="715" width="32" height="32" rx="6" fill="#1e293b" stroke="#334155" />
+  <text x="676" y="735" class="txt-title" font-size="13" text-anchor="middle">◀</text>
+
+  <rect x="700" y="715" width="32" height="32" rx="6" fill="url(#accent-grad)" />
+  <text x="716" y="735" class="btn-text" text-anchor="middle">1</text>
+
+  <rect x="740" y="715" width="32" height="32" rx="6" fill="#1e293b" />
+  <text x="756" y="735" class="txt-body" font-size="13" text-anchor="middle">2</text>
+
+  <rect x="780" y="715" width="32" height="32" rx="6" fill="#1e293b" />
+  <text x="796" y="735" class="txt-body" font-size="13" text-anchor="middle">3</text>
+
+  <rect x="820" y="715" width="32" height="32" rx="6" fill="#1e293b" stroke="#334155" />
+  <text x="836" y="735" class="txt-title" font-size="13" text-anchor="middle">▶</text>
+</svg>

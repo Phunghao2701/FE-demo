@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .txt-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; fill: #f8fafc; }
+    .txt-body { font-family: system-ui, -apple-system, sans-serif; font-weight: 400; fill: #94a3b8; }
+    .txt-accent { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: url(#accent-grad); }
+    .btn-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 14px; fill: #ffffff; text-anchor: middle; }
+    .nav-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 14px; fill: #94a3b8; }
+    .nav-text.active { fill: #00d4ff; font-weight: 600; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bg-grad)" />
+  
+  <!-- Tech Grid Background Pattern -->
+  <g stroke="#1e293b" stroke-width="0.5" opacity="0.3">
+    <path d="M 0,100 L 1200,100 M 0,200 L 1200,200 M 0,300 L 1200,300 M 0,400 L 1200,400 M 0,500 L 1200,500 M 0,600 L 1200,600 M 0,700 L 1200,700" />
+    <path d="M 150,0 L 150,800 M 300,0 L 300,800 M 450,0 L 450,800 M 600,0 L 600,800 M 750,0 L 750,800 M 900,0 L 900,800 M 1050,0 L 1050,800" />
+  </g>
+
+  <!-- NAVBAR -->
+  <rect width="1200" height="64" fill="#0b0f19" opacity="0.9" />
+  <line x1="0" y1="64" x2="1200" y2="64" stroke="#1e293b" stroke-width="1" />
+  
+  <!-- Logo -->
+  <text x="50" y="38" class="txt-title" font-size="20" letter-spacing="-0.5">🔬 <tspan fill="#00d4ff">Research</tspan>Pulse</text>
+  
+  <!-- Links -->
+  <text x="450" y="37" class="nav-text active">Tìm kiếm</text>
+  <text x="550" y="37" class="nav-text">Xu hướng</text>
+  <text x="650" y="37" class="nav-text">Địa lý</text>
+  <text x="730" y="37" class="nav-text">Tác giả</text>
+  <text x="810" y="37" class="nav-text">Project</text>
+  
+  <!-- Actions -->
+  <rect x="940" y="16" width="70" height="32" rx="6" fill="#1e293b" />
+  <text x="975" y="36" font-family="sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">🌐 VI ▾</text>
+  
+  <rect x="1025" y="16" width="125" height="32" rx="6" fill="url(#accent-grad)" />
+  <text x="1087" y="36" class="btn-text">Đăng ký</text>
+
+  <!-- HERO SECTION -->
+  <text x="600" y="160" class="txt-title" font-size="44" text-anchor="middle">Khám phá xu hướng <tspan fill="#00d4ff">nghiên cứu khoa học</tspan></text>
+  <text x="600" y="210" class="txt-title" font-size="44" text-anchor="middle">theo thời gian thực</text>
+  <text x="600" y="255" class="txt-body" font-size="16" text-anchor="middle">Tìm kiếm bài báo, phân tích keyword đang nổi, theo dõi lĩnh vực bạn quan tâm — tất cả trong một nơi.</text>
+
+  <!-- Search Input mockup -->
+  <rect x="250" y="300" width="700" height="56" rx="28" fill="#111827" stroke="#1e293b" stroke-width="2" />
+  <text x="290" y="334" class="txt-body" font-size="15" fill="#64748b">Nhập keyword, tên tác giả, journal...</text>
+  <rect x="820" y="306" width="120" height="44" rx="22" fill="url(#accent-grad)" />
+  <text x="880" y="333" class="btn-text" font-size="15">Tìm kiếm →</text>
+  <text x="600" y="380" class="txt-body" font-size="12" text-anchor="middle" fill="#64748b">Dữ liệu từ OpenAlex · 200M+ bài báo · Hoàn toàn miễn phí</text>
+
+  <!-- FEATURES GRID -->
+  <text x="600" y="450" class="txt-title" font-size="28" text-anchor="middle">Tại sao dùng ResearchPulse?</text>
+  <text x="600" y="480" class="txt-body" font-size="14" text-anchor="middle">Không chỉ là công cụ tìm kiếm — mà là nền tảng giúp bạn bứt phá trong nghiên cứu khoa học.</text>
+
+  <!-- Card 1 -->
+  <rect x="150" y="520" width="280" height="200" rx="12" fill="url(#card-grad)" stroke="#1e293b" stroke-width="1" />
+  <text x="180" y="560" font-size="28">🔍</text>
+  <text x="180" y="600" class="txt-title" font-size="18">Tìm kiếm thông minh</text>
+  <text x="180" y="630" class="txt-body" font-size="13">
+    <tspan x="180" dy="0">Tìm theo keyword, tác giả, journal,</tspan>
+    <tspan x="180" dy="18">năm. Sắp xếp theo relevance.</tspan>
+    <tspan x="180" dy="18">Đơn giản nhưng mạnh mẽ.</tspan>
+  </text>
+
+  <!-- Card 2 -->
+  <rect x="460" y="520" width="280" height="200" rx="12" fill="url(#card-grad)" stroke="#1e293b" stroke-width="1" />
+  <text x="490" y="560" font-size="28">📈</text>
+  <text x="490" y="600" class="txt-title" font-size="18">Phân tích xu hướng</text>
+  <text x="490" y="630" class="txt-body" font-size="13">
+    <tspan x="490" dy="0">Xem keyword nào đang tăng trưởng,</tspan>
+    <tspan x="490" dy="18">topic nào đã bão hòa, so sánh</tspan>
+    <tspan x="490" dy="18">nhiều keyword trên biểu đồ.</tspan>
+  </text>
+
+  <!-- Card 3 -->
+  <rect x="770" y="520" width="280" height="200" rx="12" fill="url(#card-grad)" stroke="#1e293b" stroke-width="1" />
+  <text x="800" y="560" font-size="28">🔔</text>
+  <text x="800" y="600" class="txt-title" font-size="18">Theo dõi &amp; thông báo</text>
+  <text x="800" y="630" class="txt-body" font-size="13">
+    <tspan x="800" dy="0">Follow keyword/journal yêu thích.</tspan>
+    <tspan x="800" dy="18">Nhận thông báo khi có bài báo mới</tspan>
+    <tspan x="800" dy="18">— không bỏ lỡ nghiên cứu.</tspan>
+  </text>
+
+  <!-- Footer -->
+  <line x1="150" y1="760" x2="1050" y2="760" stroke="#1e293b" stroke-width="1" />
+  <text x="150" y="780" class="txt-body" font-size="11">© 2026 ResearchPulse. Open Alex Data API integration.</text>
+  <text x="1050" y="780" class="txt-body" font-size="11" text-anchor="end">Về chúng tôi  ·  Liên hệ  ·  Chính sách bảo mật</text>
+</svg>

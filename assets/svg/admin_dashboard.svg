@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090505" />
+      <stop offset="100%" stop-color="#180f0f" />
+    </linearGradient>
+    <linearGradient id="admin-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a1e1e" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#180f0f" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .txt-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #f8fafc; }
+    .txt-body { font-family: system-ui, -apple-system, sans-serif; font-weight: 400; fill: #fca5a5; }
+    .btn-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 12px; fill: #ffffff; text-anchor: middle; }
+    .admin-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 14px; fill: #fca5a5; }
+    .admin-text.active { fill: #ef4444; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bg-grad)" />
+
+  <!-- ADMIN RED NAVBAR -->
+  <rect width="1200" height="64" fill="#180f0f" />
+  <line x1="0" y1="64" x2="1200" y2="64" stroke="#450a0a" stroke-width="1" />
+  <text x="50" y="38" class="txt-title" font-size="20" letter-spacing="-0.5">👑 <tspan fill="#ef4444">Admin</tspan>Panel</text>
+  
+  <text x="250" y="37" class="admin-text active">📊 Dashboard</text>
+  <line x1="245" y1="63" x2="340" y2="63" stroke="#ef4444" stroke-width="2" />
+
+  <text x="370" y="37" class="admin-text">📰 Quản lý Journals</text>
+  <text x="520" y="37" class="admin-text">📄 Quản lý Articles</text>
+  <text x="670" y="37" class="admin-text">📚 Quản lý Volumes</text>
+  
+  <!-- Right Navbar Profile & Lang -->
+  <rect x="940" y="16" width="60" height="32" rx="6" fill="#450a0a" />
+  <text x="970" y="36" font-family="sans-serif" font-size="12" fill="#fca5a5" text-anchor="middle">🌐 VI</text>
+  
+  <circle cx="1040" cy="32" r="16" fill="url(#admin-grad)" />
+  <text x="1040" y="36" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">AD</text>
+  <text x="1065" y="37" class="txt-title" font-size="13">Admin User ▾</text>
+
+  <!-- CONTENT -->
+  <text x="50" y="115" class="txt-title" font-size="22">Trang Quản trị Hệ thống</text>
+  <text x="50" y="138" class="txt-body" font-size="14">Quản lý cơ sở dữ liệu tạp chí, đồng bộ API OpenAlex và phân quyền người dùng.</text>
+
+  <!-- Stats Grid -->
+  <rect x="50" y="170" width="250" height="90" rx="10" fill="url(#card-grad)" stroke="#450a0a" />
+  <text x="75" y="205" font-size="24">👥</text>
+  <text x="120" y="210" class="txt-title" font-size="24">1,482</text>
+  <text x="120" y="235" class="txt-body" font-size="12">Tổng người dùng</text>
+
+  <rect x="330" y="170" width="250" height="90" rx="10" fill="url(#card-grad)" stroke="#450a0a" />
+  <text x="355" y="205" font-size="24">📰</text>
+  <text x="400" y="210" class="txt-title" font-size="24">2,504</text>
+  <text x="400" y="235" class="txt-body" font-size="12">Journals đồng bộ</text>
+
+  <rect x="610" y="170" width="250" height="90" rx="10" fill="url(#card-grad)" stroke="#450a0a" />
+  <text x="635" y="205" font-size="24">⚡</text>
+  <text x="680" y="210" class="txt-title" font-size="24">99.8%</text>
+  <text x="680" y="235" class="txt-body" font-size="12">Uptime hệ thống</text>
+
+  <rect x="890" y="170" width="260" height="90" rx="10" fill="url(#card-grad)" stroke="#450a0a" />
+  <text x="915" y="205" font-size="24">🔄</text>
+  <text x="960" y="210" class="txt-title" font-size="24">12 phút trước</text>
+  <text x="960" y="235" class="txt-body" font-size="12">Đồng bộ OpenAlex cuối</text>
+
+  <!-- Admin CRUD Table Mockup -->
+  <rect x="50" y="290" width="1100" height="470" rx="12" fill="#180f0f" stroke="#450a0a" />
+  <text x="80" y="325" class="txt-title" font-size="15">Hoạt động hệ thống mới nhất</text>
+
+  <!-- Table Header -->
+  <rect x="80" y="350" width="1040" height="36" rx="6" fill="#450a0a" />
+  <text x="100" y="373" class="txt-title" font-size="12">Thời gian</text>
+  <text x="250" y="373" class="txt-title" font-size="12">Loại hoạt động</text>
+  <text x="450" y="373" class="txt-title" font-size="12">Chi tiết sự kiện</text>
+  <text x="850" y="373" class="txt-title" font-size="12">Người thực hiện</text>
+  <text x="1050" y="373" class="txt-title" font-size="12" text-anchor="end">Trạng thái</text>
+
+  <!-- Row 1 -->
+  <text x="100" y="415" class="txt-body" font-size="13" fill="#cbd5e1">01:34:12</text>
+  <text x="250" y="415" class="txt-title" font-size="13">DB Sync</text>
+  <text x="450" y="415" class="txt-body" font-size="13" fill="#cbd5e1">Đồng bộ 12 journals mới từ OpenAlex</text>
+  <text x="850" y="415" class="txt-body" font-size="13" fill="#cbd5e1">Hệ thống (Cron)</text>
+  <rect x="990" y="400" width="60" height="20" rx="4" fill="#065f46" />
+  <text x="1020" y="414" font-family="sans-serif" font-size="10" fill="#34d399" font-weight="bold" text-anchor="middle">Thành công</text>
+  <line x1="80" y1="435" x2="1120" y2="435" stroke="#450a0a" stroke-width="1" />
+
+  <!-- Row 2 -->
+  <text x="100" y="475" class="txt-body" font-size="13" fill="#cbd5e1">01:28:45</text>
+  <text x="250" y="475" class="txt-title" font-size="13">User Auth</text>
+  <text x="450" y="475" class="txt-body" font-size="13" fill="#cbd5e1">Đăng ký tài khoản mới: user_948@hust.edu.vn</text>
+  <text x="850" y="475" class="txt-body" font-size="13" fill="#cbd5e1">Khách (Guest)</text>
+  <rect x="990" y="460" width="60" height="20" rx="4" fill="#065f46" />
+  <text x="1020" y="474" font-family="sans-serif" font-size="10" fill="#34d399" font-weight="bold" text-anchor="middle">Thành công</text>
+  <line x1="80" y1="495" x2="1120" y2="495" stroke="#450a0a" stroke-width="1" />
+
+  <!-- Row 3 -->
+  <text x="100" y="535" class="txt-body" font-size="13" fill="#cbd5e1">01:20:10</text>
+  <text x="250" y="535" class="txt-title" font-size="13">CRUD Journal</text>
+  <text x="450" y="535" class="txt-body" font-size="13" fill="#cbd5e1">Cập nhật thông tin Impact Factor cho 'Nature Machine Intelligence'</text>
+  <text x="850" y="535" class="txt-body" font-size="13" fill="#cbd5e1">Admin User</text>
+  <rect x="990" y="520" width="60" height="20" rx="4" fill="#065f46" />
+  <text x="1020" y="534" font-family="sans-serif" font-size="10" fill="#34d399" font-weight="bold" text-anchor="middle">Thành công</text>
+  <line x1="80" y1="555" x2="1120" y2="555" stroke="#450a0a" stroke-width="1" />
+
+  <!-- Row 4 -->
+  <text x="100" y="595" class="txt-body" font-size="13" fill="#cbd5e1">00:54:18</text>
+  <text x="250" y="595" class="txt-title" font-size="13">System Alert</text>
+  <text x="450" y="595" class="txt-body" font-size="13" fill="#cbd5e1">Cảnh báo: Tải CPU vượt mức 90% khi tính toán trích dẫn</text>
+  <text x="850" y="595" class="txt-body" font-size="13" fill="#cbd5e1">Hệ thống (Alert)</text>
+  <rect x="990" y="580" width="60" height="20" rx="4" fill="#7f1d1d" />
+  <text x="1020" y="594" font-family="sans-serif" font-size="10" fill="#fca5a5" font-weight="bold" text-anchor="middle">Cảnh báo</text>
+</svg>

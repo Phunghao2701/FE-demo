@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .txt-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; fill: #f8fafc; }
+    .txt-body { font-family: system-ui, -apple-system, sans-serif; font-weight: 400; fill: #94a3b8; }
+    .btn-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 12px; fill: #ffffff; text-anchor: middle; }
+    .tab-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 14px; fill: #94a3b8; }
+    .tab-text.active { fill: #00d4ff; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bg-grad)" />
+
+  <!-- APP NAVBAR -->
+  <rect width="1200" height="64" fill="#0b0f19" />
+  <line x1="0" y1="64" x2="1200" y2="64" stroke="#1e293b" stroke-width="1" />
+  <text x="50" y="38" class="txt-title" font-size="20" letter-spacing="-0.5">🔬 <tspan fill="#00d4ff">Research</tspan>Pulse</text>
+  <text x="250" y="37" font-family="sans-serif" font-size="14" fill="#94a3b8">🏠 Dashboard</text>
+  <text x="370" y="37" font-family="sans-serif" font-size="14" fill="#f8fafc" font-weight="bold">🔍 Tìm kiếm</text>
+  <line x1="365" y1="63" x2="450" y2="63" stroke="#00d4ff" stroke-width="2" />
+  <text x="480" y="37" font-family="sans-serif" font-size="14" fill="#94a3b8">🌏 Bản đồ địa lý</text>
+  <text x="610" y="37" font-family="sans-serif" font-size="14" fill="#94a3b8">🏆 Tác giả</text>
+  <text x="700" y="37" font-family="sans-serif" font-size="14" fill="#94a3b8">📁 Projects</text>
+  
+  <rect x="940" y="16" width="60" height="32" rx="6" fill="#1e293b" />
+  <text x="970" y="36" font-family="sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">🌐 VI</text>
+  <circle cx="1040" cy="32" r="16" fill="url(#accent-grad)" />
+  <text x="1040" y="36" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">JD</text>
+  <text x="1065" y="37" class="txt-title" font-size="13">John Doe ▾</text>
+
+  <!-- JOURNAL DETAIL HERO -->
+  <text x="50" y="115" class="txt-body" font-size="12">◀ Trở lại Danh mục</text>
+  
+  <rect x="50" y="135" width="1100" height="120" rx="12" fill="url(#card-grad)" stroke="#1e293b" />
+  <rect x="80" y="155" width="30" height="18" rx="3" fill="#065f46" />
+  <text x="95" y="168" font-family="sans-serif" font-size="9" fill="#34d399" font-weight="bold" text-anchor="middle">Q1</text>
+  
+  <text x="120" y="170" class="txt-title" font-size="24">Nature Machine Intelligence <tspan fill="#00d4ff">✓</tspan></text>
+  <text x="80" y="210" class="txt-body" font-size="13">Lĩnh vực: <tspan fill="#e2e8f0">AI, ML, Robotics</tspan>  ·  Nhà xuất bản: Springer Nature  ·  ISSN: 2522-5839</text>
+  
+  <!-- Metrics Badge in Hero -->
+  <rect x="740" y="155" width="100" height="45" rx="6" fill="#1e293b" stroke="#334155" />
+  <text x="790" y="173" class="txt-body" font-size="11" text-anchor="middle">Impact Factor</text>
+  <text x="790" y="193" class="txt-title" font-size="16" fill="#10b981" text-anchor="middle">25.8</text>
+
+  <rect x="850" y="155" width="100" height="45" rx="6" fill="#1e293b" stroke="#334155" />
+  <text x="900" y="173" class="txt-body" font-size="11" text-anchor="middle">H-Index</text>
+  <text x="900" y="193" class="txt-title" font-size="16" fill="#00d4ff" text-anchor="middle">112</text>
+
+  <rect x="980" y="162" width="140" height="32" rx="6" fill="url(#accent-grad)" />
+  <text x="1050" y="182" class="btn-text">✓ Đang theo dõi</text>
+
+  <!-- NAVIGATION TABS -->
+  <text x="80" y="290" class="tab-text active">Tổng quan &amp; Biểu đồ</text>
+  <line x1="50" y1="305" x2="200" y2="305" stroke="#00d4ff" stroke-width="2" />
+  
+  <text x="240" y="290" class="tab-text">Bảng xếp hạng</text>
+  <text x="380" y="290" class="tab-text">Volumes &amp; Issues</text>
+  <text x="540" y="290" class="tab-text">Bài báo liên quan gần đây</text>
+  <line x1="50" y1="306" x2="1150" y2="306" stroke="#1e293b" stroke-width="1" />
+
+  <!-- CHARTS ROW (Line & Bar) -->
+  <!-- Ranking history line chart -->
+  <rect x="50" y="330" width="530" height="230" rx="10" fill="#111827" stroke="#1e293b" />
+  <text x="80" y="360" class="txt-title" font-size="14">Lịch sử xếp hạng (SJR)</text>
+  
+  <!-- Line Chart drawing wrapper -->
+  <g stroke="#334155" stroke-width="0.5">
+    <line x1="100" y1="500" x2="520" y2="500" />
+    <line x1="100" y1="380" x2="100" y2="500" />
+  </g>
+  <path d="M 120,490 L 200,470 L 300,420 L 400,380 L 500,360" fill="none" stroke="#00d4ff" stroke-width="3" />
+  <circle cx="500" cy="360" r="5" fill="#00d4ff" />
+
+  <text x="120" y="520" class="txt-body" font-size="10" text-anchor="middle">2020</text>
+  <text x="200" y="520" class="txt-body" font-size="10" text-anchor="middle">2021</text>
+  <text x="300" y="520" class="txt-body" font-size="10" text-anchor="middle">2022</text>
+  <text x="400" y="520" class="txt-body" font-size="10" text-anchor="middle">2023</text>
+  <text x="500" y="520" class="txt-body" font-size="10" text-anchor="middle">2024</text>
+
+  <!-- Category Subject Area Bar chart -->
+  <rect x="620" y="330" width="530" height="230" rx="10" fill="#111827" stroke="#1e293b" />
+  <text x="650" y="360" class="txt-title" font-size="14">Cơ cấu bài báo theo chủ đề</text>
+  
+  <rect x="650" y="390" width="120" height="15" rx="2" fill="#00d4ff" />
+  <text x="780" y="402" class="txt-body" font-size="11">Machine Learning (45%)</text>
+
+  <rect x="650" y="420" width="80" height="15" rx="2" fill="#8b5cf6" />
+  <text x="740" y="432" class="txt-body" font-size="11">Computer Vision (30%)</text>
+
+  <rect x="650" y="450" width="40" height="15" rx="2" fill="#f59e0b" />
+  <text x="700" y="462" class="txt-body" font-size="11">Robotics (15%)</text>
+
+  <!-- TABLE: ARTICLES LIST -->
+  <rect x="50" y="580" width="1100" height="180" rx="10" fill="#111827" stroke="#1e293b" />
+  <text x="80" y="615" class="txt-title" font-size="14">Bài báo mới xuất bản</text>
+  
+  <!-- Row 1 -->
+  <text x="80" y="650" class="txt-title" font-size="13" fill="#cbd5e1">1. RAG-Survey: Retrieval Augmented Generation for Large Language Models</text>
+  <text x="80" y="670" class="txt-body" font-size="11">Tác giả: Yann LeCun, Andrew Ng  ·  Citations: 142  ·  Năm: 2024</text>
+  <line x1="80" y1="685" x2="1120" y2="685" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Row 2 -->
+  <text x="80" y="710" class="txt-title" font-size="13" fill="#cbd5e1">2. Vision Transformers in Medical Image Segmentation: A Deep Review</text>
+  <text x="80" y="730" class="txt-body" font-size="11">Tác giả: Geoffrey Hinton  ·  Citations: 89  ·  Năm: 2023</text>
+</svg>
